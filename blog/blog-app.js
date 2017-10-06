@@ -1,6 +1,5 @@
-const DATABASE_URL = window.location.origin
 function getDataFromDatabase(callback){
-	$.ajax(DATABASE_URL + '/api/posts', callback)
+	$.getJSON('https://vanity-cathedral.herokuapp.com/api/posts', callback)
 }
 
 function printPosts(data){
