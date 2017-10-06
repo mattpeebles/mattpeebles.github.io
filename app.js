@@ -13,24 +13,21 @@ function stickyNav(){
 function navBarHide(){
 	let navMain = $(".navbar-collapse");
 	$('.nav-link').on("click", () => {
+	   console.log('hi')
 	   navMain.collapse('hide');
 	});
 }
 
 function smoothScroll(){
-	$('a[href*="#"]:not([href="#"])').on('click', (e) => {
+	$('a[href*="#"]:not([href="#"])').on('click', function(e){
 		e.preventDefault();
-	
+		
 		if( $( $.attr(this, 'href') ).length > 0 ){
-				//changes hash url to /#/id
-			let hash = $(e.currentTarget).attr('href').split('S')[0]
-			window.location.hash = hash.replace('#', '#/')
-
-			$('html, body').animate({
+			$('html, body').animate(
+			{
 				scrollTop: $( $.attr(this, 'href') ).offset().top
 			}, 400);
 		}
-
 		return false;
 	});
 }
@@ -54,6 +51,10 @@ function highlight(){
 	else{
 		$('#navHeader').removeClass('highlight');
 	}
+}
+
+prettifyUrl(){
+	let hash = 
 }
 
 $(() => {
