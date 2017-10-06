@@ -1,0 +1,164 @@
+	/*post stylings styling*/
+/*******************************************/
+	.onePost {
+		margin-top: 5%;
+		width: 90%;
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.postTitle{
+		font-size: 25px;
+		width: 100%;
+		font-family: 'Josefin Slab', serif;
+		font-style: italic;
+		font-weight: 300;
+		display: inline-block;
+	}
+
+	.actualTitle{
+		width: 50%;
+	}
+
+	.infoRow {
+		text-align: right;
+		font-family: 'Open Sans Condensed', sans-serif;
+		font-weight: 300;
+		font-style: italic;
+	}
+
+	.postContent{
+		font-family: 'Open Sans Condensed', sans-serif;
+		font-weight: 300;
+		font-size: 18px;
+		margin-top: 10%;
+	}
+/*******************************************/
+
+	/*new post styling*/
+/*******************************************/
+	#newPostSection{
+		height: 100vh;
+		width: 100%;
+	}
+
+	input{
+		width: 100%;
+		margin-bottom: 5%
+	}
+
+	label{
+		margin-bottom: 1%;
+	}
+
+	#newPostFormTitle{
+		width: 100%;
+		text-align: center;
+	}
+
+	#title{
+		width: 75;
+	}
+
+	#contentDiv{
+		width: 150%;
+	}
+
+	#content{
+		width: 100%;
+		height: 100vh;
+	}
+
+	#renderedMD{
+		height: 100%;
+		border: 1px solid black;
+	}
+/*******************************************/
+
+
+/*Nav bar styling*/
+/*******************************************/
+		
+	.navbar{ /*Navbar parent div*/
+		font-family: 'Josefin Slab', serif;
+		font-weight: 400;
+	}
+
+		
+	#navbarContainer{ /*child of navbar and container for navbar elements*/
+		width: 100%;
+	}
+
+		
+	#navbarContainer > .navbar-header{ /*child of navbarContainer, contains ul and li*/
+		width: 100%;
+		margin-right: 0;
+		margin-left: 0;
+	}
+		
+	#navbarContainer > .navbar-header > #navList{ /*child of navbar-header, ul element*/
+		width: 100%;
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
+	}
+
+		
+	.nav > li { /*targets all li elements of ul/#navList*/
+		display: inline-block;
+		width: 50%;
+		float: left;
+		position: relative;
+	}
+
+		
+	#newPost{ /*targets li blog page to highlight current page*/
+		text-align: right;
+	}
+
+		
+
+	.navbar .navbar-nav > li > a:hover{ /*targets and overrides boostrap styling for hover effects on list items*/
+		
+	}
+/*******************************************/
+
+
+@media screen and (min-width: 768px){
+	
+	.navbar{ /*Navbar parent div*/
+		
+	}
+
+		
+	#navbarContainer{ /*child of navbar and container for navbar elements*/		
+		
+	}
+
+		
+	.navbar-header{ /*child of navbarContainer, contains ul and li*/
+		
+	}
+		
+	#navList{ /*child of navbar-header, ul element*/
+
+	}
+
+		
+	.nav > li { /*targets all li elements of ul/#navList*/
+		width: 50%;
+	}
+
+		
+	#blogPage{ /*targets li blog page to highlight current page*/
+
+	}
+
+		
+
+	.navbar .navbar-nav > li > a:hover{ /*targets and overrides boostrap styling for hover effects on list items*/
+	
+	}
+}

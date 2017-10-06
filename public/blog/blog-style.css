@@ -1,0 +1,251 @@
+/*saving this color FFC0ED*/
+
+.hidden{
+	display: none;
+}
+
+body{
+	background-color: #fff;
+	font-family: 'Open Sans', sans-serif;
+}
+
+h2{
+	font-family: 'Titillium Web', sans-serif;
+}
+
+	#heroHeader{
+		height: 60vh;
+		background: url('../../resources/images/hero-image.png');
+		text-align: left;
+		display: flex;
+		align-items: center;
+		justify-content: center; 
+	}
+
+	#centeredRow{
+		max-width: 75%;
+	}
+
+	#heroFill{
+		font-size: 48px;
+		border-top: 10px solid black;
+		border-bottom: 10px solid black;
+		padding: 15px;
+		width: auto;
+		font-family: 'Titillium Web', sans-serif;
+}
+
+.onePost {
+	margin-top: 5%;
+	padding: 2.5em 0 1.5em;
+	width: 90%;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.titleRow{
+	height: 2.5em;
+	position: relative;
+}
+
+.viewMore, .viewLess{
+	cursor: pointer;
+}
+
+i.viewMore, i.viewLess{
+	font-size: 9vw;
+/*	position: absolute;
+	top: 0;
+	right: 0;*/
+}
+
+i.viewMore:hover, i.viewLess:hover{
+	color: #333;
+	animation-name: wiggle;
+	animation-duration: 1.2s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: normal;
+}
+
+@keyframes wiggle {
+	0% {
+		padding-top: 0px;
+	}
+
+	50% {
+		padding-top: 10px;
+	}
+
+	100% {
+		padding-top: 0px;
+	}
+}
+
+.postTitle{
+	font-size: 6vw;
+	width: 100%;
+	font-weight: 300;
+}
+
+.postAuthor{
+	text-align: left;
+}
+
+.postAuthor > img{
+	width: 25px;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+
+.postCreated{
+	text-align: right;
+}
+
+.infoRow {
+	font-weight: 300;
+}
+
+.postContent{
+	font-weight: 300;
+	font-size: 16px;
+	padding: 2em 0;
+}
+
+hr{
+	background-color: #98D1CF;
+	border-color: #98D1CF;
+	width: 65%;
+}
+
+/*Blocks of code*/
+pre {
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height:1.4;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+
+  // Account for some code outputs that place code tags in pre tags
+  code {
+    padding: 0;
+    font-size: inherit;
+    color: inherit;
+    white-space: pre-wrap;
+    background-color: transparent;
+    border-radius: 0;
+  }
+}
+
+#contentButton{
+	padding-top: 1.5em;
+	text-align: center;
+}
+
+/*Nav bar styling*/
+/*******************************************/
+		
+	.navbar{ /*Navbar parent div*/
+		font-weight: 400;
+		font-size: 18px;
+	}
+
+		
+	#navbarContainer{ /*child of navbar and container for navbar elements*/
+		/*no styling*/
+	}
+
+		
+	.navbar-header{ /*child of navbarContainer, contains ul and li*/
+		position: relative;
+	}
+		
+	#navList{ /*child of navbar-header, ul element*/
+		width: 100%;
+		text-align: center;
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
+		bottom: 0;
+	}
+
+		
+	#navList > li { /*targets all li elements of ul/#navList*/
+		box-sizing: border-box;
+		display: inline-block;
+		margin-left: auto;
+		margin-right: auto;
+		width: 20%;
+	}
+
+		
+	#blogPage{
+		color: #98D1CF;
+	} 
+
+
+	.navbar .navbar-nav > li > a:hover{ /*targets and overrides boostrap styling for hover effects on list items*/
+		color: #dad2d8;
+	}
+/*******************************************/
+
+
+@media screen and (min-width: 768px){
+	
+	.navbar{ /*Navbar parent div*/
+		width: 100%;
+	}
+
+		
+	#navbarContainer{ /*child of navbar and container for navbar elements*/		
+		width: 100%;
+	}
+
+		
+	.navbar-header{ /*child of navbarContainer, contains ul and li*/
+		width: 100%;
+	}
+		
+	#navList{ /*child of navbar-header, ul element*/
+		width: 100%;
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+		
+	.nav > li { /*targets all li elements of ul/#navList*/
+		width: 25%;
+	}
+
+		
+	#blogPage{ /*targets li blog page to highlight current page*/
+
+	}
+
+		
+
+	.navbar .navbar-nav > li > a:hover{ /*targets and overrides boostrap styling for hover effects on list items*/
+	
+	}
+
+	.postTitle{
+		font-size: 25px;
+		width: 100%;
+		font-weight: 300;
+	}
+
+
+	i.viewMore, i.viewLess{
+	font-size: 45px;
+/*	position: absolute;
+	top: 0;
+	right: 0;*/
+}
+}
