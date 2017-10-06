@@ -16,7 +16,7 @@ h2{
 
 	#heroHeader{
 		height: 100vh;
-		background: url('../resources/images/hero-image.png');
+		background: url('./resources/images/hero-image.png');
 		text-align: left;
 		display: flex;
 		align-items: center;
