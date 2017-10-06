@@ -35,6 +35,10 @@ h2{
 		font-family: 'Titillium Web', sans-serif;
 }
 
+#blogSection{
+	min-height: 100vh;
+}
+
 .onePost {
 	margin-top: 5%;
 	padding: 2.5em 0 1.5em;
