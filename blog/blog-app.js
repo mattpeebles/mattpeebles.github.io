@@ -61,6 +61,12 @@ function showContent(){
 	})
 }
 
+function prettifyUrl(){
+	console.log(window.location.href)
+	history.pushState('data', '/thoughts')
+	console.log('hi')
+}
+
 function navBarHide(){
 	let navMain = $(".navbar-collapse");
 	$('.nav-link').on("click", () => {
@@ -73,4 +79,5 @@ $(() => {
 	returnData()
 	showContent()
 	navBarHide()
+	prettifyUrl()
 })

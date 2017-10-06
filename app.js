@@ -13,23 +13,37 @@ function stickyNav(){
 function navBarHide(){
 	let navMain = $(".navbar-collapse");
 	$('.nav-link').on("click", () => {
-	   console.log('hi')
 	   navMain.collapse('hide');
 	});
 }
 
 function smoothScroll(){
-	$('a[href*="#"]:not([href="#"])').on('click', function(e)
-	{
+	$('a[href*="#"]:not([href="#"])').on('click', (e) => {
 		e.preventDefault();
-		
+	
 		if( $( $.attr(this, 'href') ).length > 0 ){
-			$('html, body').animate(
-			{
+				//changes hash url to /#/id
+			let hash = $(e.currentTarget).attr('href').split('S')[0]
+			window.location.hash = hash.replace('#', '#/')
+
+			$('html, body').animate({
 				scrollTop: $( $.attr(this, 'href') ).offset().top
 			}, 400);
 		}
+
 		return false;
+	});
+}
+
+function applyScrollSpy(){
+
+	if($('.nav-item').children('.active').length == 0 && window.location.hash !== ''){
+		 history.pushState("", document.title, window.location.pathname)
+	}
+
+	$(window).on('activate.bs.scrollspy', (e) => {
+		let hash = $('.nav-item').children('.active').attr('href').split('S')[0]
+		window.location.hash = hash.replace('#', '#/')
 	});
 }
 
@@ -47,8 +61,10 @@ $(() => {
 	smoothScroll()
 	highlight()
 	navBarHide()
+	applyScrollSpy()
 	$(window).scroll(() => {
 		stickyNav()
 		highlight()
+		applyScrollSpy()
 	})
 })
