@@ -33,7 +33,6 @@ function smoothScroll(){
 }
 
 function applyScrollSpy(){
-
 	if($('.nav-item').children('.active').length == 0 && window.location.hash !== ''){
 		 history.pushState("", document.title, window.location.pathname)
 	}
@@ -51,10 +50,6 @@ function highlight(){
 	else{
 		$('#navHeader').removeClass('highlight');
 	}
-}
-
-prettifyUrl(){
-	let hash = 
 }
 
 $(() => {
