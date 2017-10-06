@@ -13,7 +13,8 @@
     "site",
     "about",
     "project",
-    "page"
+    "page",
+    "portfolio"
   ],
   "author": "matt peebles",
   "license": "ISC",
