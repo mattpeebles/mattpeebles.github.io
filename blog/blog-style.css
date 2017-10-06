@@ -198,6 +198,11 @@ pre {
 		color: #dad2d8;
 	}
 /*******************************************/
+@media screen and (min-width: 615px){
+	.postTitle{
+		font-size: 25px;
+	}
+}
 
 
 @media screen and (min-width: 768px){
