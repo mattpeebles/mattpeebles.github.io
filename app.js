@@ -33,7 +33,7 @@ function smoothScroll(){
 }
 
 function prettifyUrl(){
-	history.pushState("", document.title, window.location.pathname)
+	history.replaceState("", document.title, window.location.pathname)
 }
 
 function highlight(){
