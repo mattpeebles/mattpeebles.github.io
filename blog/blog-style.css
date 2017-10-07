@@ -35,6 +35,11 @@ h2{
 		font-family: 'Titillium Web', sans-serif;
 }
 
+#loading{
+	text-align: center;
+}
+
+
 #blogSection{
 	min-height: 100vh;
 }
@@ -207,6 +212,10 @@ pre {
 
 @media screen and (min-width: 768px){
 	
+	#loading{
+		padding: 5em;
+	}
+
 	.navbar{ /*Navbar parent div*/
 		width: 100%;
 	}

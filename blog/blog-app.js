@@ -32,12 +32,20 @@ function printPosts(data){
 						   '</div>'+
 						   '<hr class="breakLine">';
 		$("#blogPostSection").prepend(blogTemplate)
+		removeLoading()
 	})
 }
 
 
 function returnData(){
 	getDataFromDatabase(printPosts)
+}
+
+function removeLoading(){
+	console.log($('#blogPostSection').children().length)
+	if($('#blogPostSection').children().length > 0){
+		$('#loading').remove()
+	}
 }
 
 function showContent(){
@@ -61,12 +69,6 @@ function showContent(){
 	})
 }
 
-function prettifyUrl(){
-	console.log(window.location.href)
-	history.pushState('data', '/thoughts')
-	console.log('hi')
-}
-
 function navBarHide(){
 	let navMain = $(".navbar-collapse");
 	$('.nav-link').on("click", () => {
@@ -79,5 +81,5 @@ $(() => {
 	returnData()
 	showContent()
 	navBarHide()
-	prettifyUrl()
+	removeLoading()
 })
