@@ -32,6 +32,10 @@ function smoothScroll(){
 	});
 }
 
+function prettifyUrl(){
+	history.pushState("", document.title, window.location.pathname)
+}
+
 function highlight(){
 	if($('#summaryNav').hasClass('active')){
 		$('#navHeader').addClass('highlight');
@@ -46,6 +50,7 @@ $(() => {
 	smoothScroll()
 	highlight()
 	navBarHide()
+	prettifyUrl()
 	$(window).scroll(() => {
 		stickyNav()
 		highlight()
