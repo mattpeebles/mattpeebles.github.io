@@ -32,17 +32,6 @@ function smoothScroll(){
 	});
 }
 
-function applyScrollSpy(){
-	if($('.nav-item').children('.active').length == 0 && window.location.hash !== ''){
-		 history.pushState("", document.title, window.location.pathname)
-	}
-
-	$(window).on('activate.bs.scrollspy', (e) => {
-		let hash = $('.nav-item').children('.active').attr('href').split('S')[0]
-		window.location.hash = hash.replace('#', '#/')
-	});
-}
-
 function highlight(){
 	if($('#summaryNav').hasClass('active')){
 		$('#navHeader').addClass('highlight');
@@ -57,10 +46,8 @@ $(() => {
 	smoothScroll()
 	highlight()
 	navBarHide()
-	applyScrollSpy()
 	$(window).scroll(() => {
 		stickyNav()
 		highlight()
-		applyScrollSpy()
 	})
 })
