@@ -8,11 +8,10 @@ h2{
 	font-family: 'Titillium Web', sans-serif;
 }
 
-#projectNav.active, #contactNav.active, #navHeader.highlight, .highlight{
+#projectNav.active, #contactNav.active, #navHeader.highlight{
 	color: #f97a80;
 	transition: color .33s ease-out;
 }
-
 
 	#heroHeader{
 		height: 100vh;
