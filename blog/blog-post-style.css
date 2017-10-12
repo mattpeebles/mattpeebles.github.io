@@ -1,12 +1,14 @@
 /*CSS Icon Animation*/
   .arrowFinal{
     height: 90px;
+    text-align: center;
   }
 
   .iconFinal{
      animation-name: down-gesture;
      animation-duration: 1.2s;
-    animation-iteration-count: infinite;
+     animation-iteration-count: infinite;
+     font-size: 48px;
   }
 
   @keyframes down-gesture{
