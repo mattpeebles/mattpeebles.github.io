@@ -1,0 +1,23 @@
+/*CSS Icon Animation*/
+  .arrowFinal{
+    height: 90px;
+  }
+
+  .iconFinal{
+     animation-name: down-gesture;
+     animation-duration: 1.2s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes down-gesture{
+     0%{
+        padding-top: 20px;
+     }
+     50%{
+       padding-top: 30px;
+     }
+     100%{
+        padding-top: 20px;
+     }
+  }
+/********/

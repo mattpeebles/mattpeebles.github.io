@@ -76,8 +76,7 @@ const converter = new showdown.Converter()
 						};
 
 			let dataJSON = JSON.stringify(data)
-			console.log(data, dataJSON)
-			
+						
 			$.ajax({
 			     url: DATABASE_URL,
 			     type: 'POST',
