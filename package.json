@@ -4,7 +4,7 @@
   "description": "vanity site for matt peebles",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,8 +17,11 @@
     "url": "https://github.com/mattpeebles/portfolio/issues"
   },
   "homepage": "https://github.com/mattpeebles/portfolio#readme",
-  "dependencies": {
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
     "express": "^4.17.1",
-    "nodemon": "^2.0.2"
+    "gulp": "^4.0.2",
+    "gulp-nodemon": "^2.4.2",
+    "http": "0.0.0"
   }
 }
