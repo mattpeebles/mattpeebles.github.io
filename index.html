@@ -1,18 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-	<!-- Global Site Tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-107760504-1"></script>
-		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
-
-		  gtag('config', 'UA-107760504-1');
-		</script>
-	<!--  -->
-	
 	<meta charset="utf-8">
 	<meta name="description" content="Portfolio Site for Matt Peebles">
 	<meta name="author" content="Matt Peebles">
@@ -32,18 +20,29 @@
       rel="stylesheet">
 
 	<link rel="stylesheet" type="text/css" href="./main.css">
+	<link rel="stylesheet/less" type="text/css" href="./header.less" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
 
 </head>
 <body data-spy="scroll" data-target="#navbarSupportedContent">
 
+	<header id="header">
+		<div id="bslu">
+			<div id="yellow"></div>
+			<div id="event-trigger" ></div>
+			<div id="header-container">
+				<h1 id="name">MATT P E E B L E S</h1>
+			</div>
+		</div>
+	</header>
+
+	
+	
 	<header class='container-fluid' id="heroHeader">
 		<div class="row" id="centeredRow">
 			<div class="col-sm-12" id="middle">
 				<h1 id="heroFill">Matt <br>Peebles</h1>
 			</div>
-		</div>
-		<div id="downHeader">
-			<a href="#navbar"><i class="material-icons">keyboard_arrow_down</i></a>
 		</div>
 	</header>
 
@@ -75,7 +74,7 @@
 	<section class="container" id="summarySection">
 		<div class="row">
 			<div class="col-sm-12">
-				<h2>Full Stack Javascript Developer</h2>
+				<h2>Full Stack Developer</h2>
 				<hr>
 			</div>
 			<div class="col-sm-12 col-md-7">
