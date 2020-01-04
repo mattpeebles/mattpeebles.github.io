@@ -22,7 +22,6 @@ function getData(callback){
 }
 
 function printPosts(data){
-	console.log(data)
 	let posts = data.blogposts
 
 	posts.forEach((post, index) => {
