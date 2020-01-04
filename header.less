@@ -1,70 +1,116 @@
-:root
-{
-    --name-start-height: .7em;
-}
+@box-width        : 175px;
+@name-start-height: 2em;
+@main-color       : yellow;
 
-#header
-{
-    width: 100%;
-    height: 45%;
+#header {
+    width   : 100%;
+    height  : 100%;
     position: relative;
 }
 
-#bslu{
-    position: relative;
-    height: 100%;
-    padding-top: 20%;
-    padding-left: 10%;
+#bslu {
+    position     : relative;
+    height       : 100%;
+    padding-top  : 20%;
+    padding-left : 10%;
+    padding-right: 10%;
 }
 
-#yellow
-{
-    width: 175px;
-    height: 175px;
-    background-color: red;
-    position: absolute;
+#yellow {
+    width           : @box-width;
+    height          : @box-width;
+    background-color: @main-color;
+    position        : absolute;
+    transition      : background-color 1s, width 1s, height 1s;
 }
 
-#yellow:hover{
+#yellow:hover {
     background-color: green;
 }
 
-#header-container
-{
-    width: auto;
-    position: relative;
-    margin-top: 10%;
-    margin-left:10%;
+#header-container {
+    width      : auto;
+    position   : relative;
+    margin-top : 10%;
+    margin-left: 10%;
 }
 
-@keyframes reveal{
-    from {height: var(--name-start-height);}
-    to {height: 100%;}
+@keyframes reveal {
+    from {
+        height: var(@name-start-height);
+    }
+
+    to {
+        height: 100%;
+    }
 }
 
-@keyframes hide{
-    from {height: 100%}
-    to {height: var(--name-start-height)}
+@keyframes hide {
+    from {
+        height: 100%
+    }
+
+    to {
+        height: @name-start-height
+    }
 }
 
-#name{
-    height: var(--name-start-height);
-    overflow: hidden;
-    transition: height 1s;
+#name {
+    height        : @name-start-height;
+    overflow      : hidden;
     pointer-events: none;
 }
 
-#event-trigger
-{
-    height: 175px;
-    width: 100%;
-    background-color: transparent;
-    position: absolute;
-    z-index: 9999;
+#firstname {
+    letter-spacing: .1em;
 }
 
-#event-trigger:hover ~ #header-container #name
-{
-    height: 1em;
-    transition: height 1s;
+#lastname {
+    font-style    : italic;
+    letter-spacing: .3em;
+}
+
+#event-trigger {
+    height          : 175px;
+    width           : 100%;
+    background-color: transparent;
+    position        : absolute;
+    z-index         : 9999;
+
+    &:hover {
+        &~#yellow {
+            animation                : swipe 3s forwards;
+            animation-iteration-count: 1;
+        }
+
+        @keyframes swipe {
+            0% {
+                width : @box-width;
+                height: @box-width;
+            }
+
+            25% {
+                width     : 77%;
+                margin-top: 9%;
+                height    : 3em;
+            }
+
+            75% {
+                right: 13%;
+            }
+
+            100% {
+                width     : 0%;
+                margin-top: 9%;
+                right     : 13%;
+                height    : 3em;
+            }
+        }
+
+
+        &~#header-container #name {
+            transition : height 1s, text-shadow 2s, margin-top 4s;
+            text-shadow: 6px 6px 1px @main-color;
+        }
+    }
 }
