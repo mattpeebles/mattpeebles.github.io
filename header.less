@@ -1,116 +1,188 @@
 @box-width        : 175px;
 @name-start-height: 2em;
-@main-color       : yellow;
+@main-color       : pink;
 
-#header {
-    width   : 100%;
-    height  : 100%;
-    position: relative;
-}
 
-#bslu {
-    position     : relative;
-    height       : 100%;
-    padding-top  : 20%;
-    padding-left : 10%;
-    padding-right: 10%;
-}
 
-#yellow {
-    width           : @box-width;
-    height          : @box-width;
-    background-color: @main-color;
-    position        : absolute;
-    transition      : background-color 1s, width 1s, height 1s;
-}
+#navbar{
+    height: 50px;
+    width: 100vw;
+    position: fixed;
+    padding: 10px;
+    padding-right: 25px;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    z-index: 10;
 
-#yellow:hover {
-    background-color: green;
-}
-
-#header-container {
-    width      : auto;
-    position   : relative;
-    margin-top : 10%;
-    margin-left: 10%;
-}
-
-@keyframes reveal {
-    from {
-        height: var(@name-start-height);
+    #navbar-menu-button
+    {
+        text-align: right;
+        font-size: 26px;
+        width: auto;
     }
 
-    to {
-        height: 100%;
+    #navbar-logo{
+        flex-grow:1;
+        text-shadow: 3px 3px 1px @main-color;
+        display: flex;
+        opacity: 0;
+
+        #navbar-firstname{
+            #firstname-base
+        }
+
+        #navbar-lastname{
+            #lastname-base
+        }
     }
 }
 
-@keyframes hide {
-    from {
-        height: 100%
-    }
-
-    to {
-        height: @name-start-height
-    }
-}
-
-#name {
-    height        : @name-start-height;
-    overflow      : hidden;
-    pointer-events: none;
-}
-
-#firstname {
+#firstname-base {
     letter-spacing: .1em;
 }
 
-#lastname {
+#lastname-base {
     font-style    : italic;
     letter-spacing: .3em;
 }
 
-#event-trigger {
-    height          : 175px;
-    width           : 100%;
-    background-color: transparent;
-    position        : absolute;
-    z-index         : 9999;
+#header 
+{
+    width   : 100%;
+    height  : 100%;
+    position: relative;
+    
+    #logo 
+    {
+        position     : relative;
+        height       : 50%;
+        padding-top  : 15%;
+        padding-left : 10%;
+        padding-right: 10%;
+        margin-bottom: 5%;
 
-    &:hover {
-        &~#yellow {
-            animation                : swipe 3s forwards;
-            animation-iteration-count: 1;
+        #logo-box {
+            width           : @box-width;
+            height          : @box-width;
+            background-color: @main-color;
+            position        : absolute;
         }
 
-        @keyframes swipe {
-            0% {
-                width : @box-width;
-                height: @box-width;
+        #name-container {
+            width      : auto;
+            position   : relative;
+            margin-top : 10%;
+            margin-left: 10%;
+            z-index: 12;
+
+            #name {
+                height        : @name-start-height;
+                overflow      : hidden;
+                pointer-events: none;
             }
 
-            25% {
-                width     : 77%;
-                margin-top: 9%;
-                height    : 3em;
+            #firstname{
+                #firstname-base
             }
 
-            75% {
-                right: 13%;
-            }
-
-            100% {
-                width     : 0%;
-                margin-top: 9%;
-                right     : 13%;
-                height    : 3em;
+            #lastname{
+                #lastname-base
             }
         }
 
+        #event-trigger {
+            height          : 175px;
+            width           : 80%;
+            background-color: transparent;
+            position        : absolute;
+            z-index         : 9999;
 
-        &~#header-container #name {
-            transition : height 1s, text-shadow 2s, margin-top 4s;
-            text-shadow: 6px 6px 1px @main-color;
+            &:hover, &.hovered {
+                &~#logo-box {
+                    animation                : swipe 3s forwards;
+                    animation-iteration-count: 1;
+                }
+
+                @keyframes swipe {
+                    0% {
+                        width : @box-width;
+                        height: @box-width;
+                    }
+
+                    25% {
+                        width     : 77%;
+                        margin-top: 9%;
+                        height    : 3em;
+                    }
+
+                    75% {
+                        right: 13%;
+                    }
+
+                    100% {
+                        width     : 0%;
+                        margin-top: 9%;
+                        right     : 13%;
+                        height    : 3em;
+                    }
+                }
+
+
+                &~#name-container #name {
+                    transition : height 1s, text-shadow 1s, margin-top 4s;
+                    text-shadow: 6px 6px 0px @main-color;
+                }
+            }
         }
+    }
+
+    #header-menu{
+        padding-left: 20%;
+
+        .header-menu-item
+        {
+            margin-bottom: 5%;
+            font-size: 22px;
+            font-variant: small-caps;
+            font-style: italic;
+
+            .header-menu-link
+            {
+                color: black;
+                text-decoration-color: @main-color;
+            }
+        }
+    }
+}
+
+@keyframes fadeInNavbarLogo{
+    0% {
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1
+    }
+}
+
+@keyframes shiftLeftAndFade
+{
+    0% {
+        margin-left: 10%;
+        opacity: 1;
+    }
+    75% 
+    {
+        margin-left: -10%;
+        opacity: 0;
+        font-size: 14px;
+    }
+
+    100%{
+        margin-left: -10%;
+        opacity: 0;
+        font-size: 14px;
+        display: none;
     }
 }
