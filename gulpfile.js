@@ -1,6 +1,9 @@
 var gulp = require('gulp');
 var nodemon = require('gulp-nodemon');
 var browserSync = require('browser-sync').create();
+var path = require('path');
+var less = require('gulp-less');
+
 
 gulp.task('gulp_nodemon', function() {
   nodemon({
@@ -18,7 +21,20 @@ gulp.task('sync', function() {
         reloadDelay: 1000 //Important, otherwise syncing will not work
     });
 
-  gulp.watch(['./**/*.js', './**/*.html', './**/*.css', "./*.less"]).on("change", browserSync.reload);
+  gulp.watch(['./**/*.js', './**/*.html', './**/*.css']).on("change", browserSync.reload);
 });
 
-gulp.task('default', gulp.parallel('gulp_nodemon', 'sync'));
+ 
+gulp.task('less', function () {
+  return gulp.src('./*.less')
+    .pipe(less({
+      paths: [ path.join(__dirname, 'less', 'includes') ]
+    }))
+    .pipe(gulp.dest('./assets/css'));
+});
+
+gulp.task('watch', function() {
+  return gulp.watch('./*.less', gulp.series('less'));  // Watch all the .less files, then run the less task
+});
+
+gulp.task('default', gulp.parallel('gulp_nodemon', 'watch', 'sync'));
