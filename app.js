@@ -1,9 +1,9 @@
 var sticky = $('#name').offset().top - 12;
 
-const isEventTriggerVisible = () => (window.pageYOffset || $(window).scrollTop()) < $("#event-trigger").offset().top;
+const isEventTriggerVisible = () => (window.pageYOffset || $(window).scrollTop()) < $("#event-trigger").offset().top + $("#event-trigger").height();
 
 function logoSetup(){
-	let navbarLogo = $("#navbar-logo");
+	let navbarLogo = $("#navbar");
 		
 	if(!isEventTriggerVisible())
 	{
@@ -21,7 +21,7 @@ let navbarLogoCanAnimateOut = true;
 
 function adjustLogos(shrink)
 {
-	let navbarLogo = $("#navbar-logo");
+	let navbarLogo = $("#navbar");
 
 	if(shrink)
 	{
