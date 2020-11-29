@@ -1,5 +1,5 @@
 body{
-	background-color: #fff;
+	background-color: #fffef1;
 	height: 100vh;
 	font-family: 'Open Sans', sans-serif;
 }
@@ -308,21 +308,21 @@ h2{
 	/*Contact*/
 /*******************************************/
 
-	#contactSection{
+	#contact{
 		height: 92vh;
 		padding: 5em 2em;
 		text-align: center;
 		padding-bottom: 200px;
 	}
 
-	#contactSection .my-btn{
+	#contact .my-btn{
 		width: 65%;
 		position: relative;
 		margin-left: auto;
 		margin-right: auto;
 	}
 
-	#contactSection > h3{
+	#contact > h3{
 		text-align: center;
 		font-size: 45px;
 	}
