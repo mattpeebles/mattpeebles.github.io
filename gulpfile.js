@@ -46,7 +46,7 @@ gulp.task('sync', function ()
 
 gulp.task('html', function ()
 {
-  return gulp.src(['./src/**/*.html', '!./src/boilerplate.html', '!./src/blog/**/*.html'])
+  return gulp.src(['./src/**/*.html', '!./src/essays/**/*.html'])
     .pipe(gulp.dest('./dist/'));
 });
 
@@ -57,9 +57,9 @@ gulp.task('watch-html', function ()
 
 gulp.task('compile-md', function (done)
 {
-  return gulp.src('./src/blog/posts/**/*.md')
+  return gulp.src('./src/essays/posts/**/*.md')
     .pipe(markdown())
-    .pipe(gulp.dest('./tmp/blog/'));
+    .pipe(gulp.dest('./tmp/essays/'));
 })
 
 const postList = [];
@@ -67,12 +67,12 @@ const postList = [];
 gulp.task('generate-posts', gulp.series('compile-md', function (done)
 {
   const testReg = new RegExp(/<h1 id="[\w|-]+">[\w|\s]+<\/h1>/)
-  const boiler = fs.readFileSync(`${__dirname}/src/boilerplate.html`).toString();
+  const boiler = fs.readFileSync(`${__dirname}/src/essays/boilerplate.html`).toString();
 
   let postTitle;
   let content;
 
-  return gulp.src(['./tmp/blog/**/*.html'])
+  return gulp.src(['./tmp/essays/**/*.html'])
     .pipe(through.obj((file, enc, cb) =>
     {
       content = file.contents.toString();
@@ -87,7 +87,7 @@ gulp.task('generate-posts', gulp.series('compile-md', function (done)
     {
       console.log(path)
       let tmp = path.dirname
-      path.dirname = `blog/${path.dirname}`;
+      path.dirname = `essays/${path.dirname}`;
       postList.push(`<li><a href='${tmp}'>${postTitle}</a></li>`)
     }))
     .pipe(gulp.dest("./dist"))
@@ -97,9 +97,9 @@ gulp.task('generate-posts', gulp.series('compile-md', function (done)
 gulp.task('generate-blog', gulp.series('compile-md', 'generate-posts', function (done)
 {
   return gulp
-    .src('src/blog/index.html', { allowEmpty: false })
+    .src('src/essays/index.html', { allowEmpty: false })
     .pipe(replace('{{POSTLIST}}', _ => postList.join(' ')))
-    .pipe(gulp.dest("dist/blog/"))
+    .pipe(gulp.dest("dist/essays/"))
 }))
 
 gulp.task('less', function ()
@@ -118,7 +118,7 @@ gulp.task('watch-less', function ()
 
 gulp.task('watch-md', function ()
 {
-  return gulp.watch('./src/blog/posts/**/*.md', gulp.series(['generate-posts']));  // Watch all the .less files, then run the less task
+  return gulp.watch('./src/essays/posts/**/*.md', gulp.series(['generate-blog']));  // Watch all the .less files, then run the less task
 });
 
 gulp.task('js', function ()
