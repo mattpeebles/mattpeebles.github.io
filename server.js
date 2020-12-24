@@ -4,7 +4,7 @@ const http = require('http');
 const path = require('path');
 const port = 3260;
 
-app.use(express.static("."))
+app.use(express.static("./src"))
 
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));

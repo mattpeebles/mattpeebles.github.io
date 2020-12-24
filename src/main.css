@@ -1,12 +1,3 @@
-body{
-	background-color: #fffef1;
-	height: 100vh;
-	font-family: 'Open Sans', sans-serif;
-}
-
-h2{
-	font-family: 'Titillium Web', sans-serif;
-}
 
 #projectNav.active, #contactNav.active, #navHeader.highlight{
 	color: #f97a80;

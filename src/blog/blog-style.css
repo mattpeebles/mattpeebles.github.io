@@ -1,0 +1,155 @@
+/*saving this color FFC0ED*/
+
+.hidden {
+	display: none;
+}
+
+#loading {
+	text-align: center;
+}
+
+
+#blogSection {
+	min-height: 100vh;
+}
+
+.onePost {
+	margin-top  : 5%;
+	padding     : 2.5em 0 1.5em;
+	width       : 90%;
+	position    : relative;
+	margin-left : auto;
+	margin-right: auto;
+}
+
+.titleRow {
+	height  : 2.5em;
+	position: relative;
+}
+
+.viewMore,
+.viewLess {
+	cursor: pointer;
+}
+
+i.viewMore,
+i.viewLess {
+	font-size: 9vw;
+}
+
+i.viewMore:hover,
+i.viewLess:hover {
+	color                    : #333;
+	animation-name           : wiggle;
+	animation-duration       : 1.2s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction      : normal;
+}
+
+@keyframes wiggle {
+	0% {
+		padding-top: 0px;
+	}
+
+	50% {
+		padding-top: 10px;
+	}
+
+	100% {
+		padding-top: 0px;
+	}
+}
+
+.postTitle {
+	font-size  : 6vw;
+	width      : 100%;
+	font-weight: 300;
+}
+
+.postAuthor {
+	text-align: left;
+}
+
+.postAuthor>img {
+	width        : 25px;
+	border-radius: 50%;
+	margin-right : 10px;
+}
+
+.postCreated {
+	text-align: right;
+}
+
+.infoRow {
+	font-weight: 300;
+}
+
+.postContent {
+	font-weight: 300;
+	font-size  : 16px;
+	padding    : 2em 0;
+}
+
+hr {
+	background-color: #98D1CF;
+	border-color    : #98D1CF;
+	width           : 65%;
+}
+
+/*Blocks of code*/
+pre {
+	display         : block;
+	padding         : 9.5px;
+	margin          : 0 0 10px;
+	font-size       : 13px;
+	line-height     : 1.4;
+	word-break      : break-all;
+	word-wrap       : break-word;
+	background-color: #f5f5f5;
+	border          : 1px solid #ccc;
+	border-radius   : 4px;
+
+}
+
+/* Account for some code outputs that place code tags in pre tags */
+code {
+	padding         : 0;
+	font-size       : inherit;
+	color           : inherit;
+	white-space     : pre-wrap;
+	background-color: transparent;
+	border-radius   : 0;
+}
+
+#contentButton {
+	padding-top: 1.5em;
+	text-align : center;
+}
+
+/*******************************************/
+@media screen and (min-width: 615px) {
+	.postTitle {
+		font-size: 25px;
+	}
+}
+
+
+@media screen and (min-width: 768px) {
+
+	#loading {
+		padding: 5em;
+	}
+
+	.postTitle {
+		font-size  : 25px;
+		width      : 100%;
+		font-weight: 300;
+	}
+
+
+	i.viewMore,
+	i.viewLess {
+		font-size: 45px;
+	}
+}
