@@ -1,0 +1,176 @@
+#navbar {
+  width: 98%;
+  position: fixed;
+  padding: 10px;
+  padding-right: 25px;
+  background-color: #fffef1;
+  z-index: 10;
+  display: flex;
+  flex-direction: row;
+  top: 0;
+}
+#navbar #navbar-menu-button {
+  text-align: right;
+  font-size: 26px;
+  width: auto;
+}
+#navbar #navbar-logo {
+  flex-grow: 1;
+  text-shadow: 3px 3px 1px pink;
+  display: flex;
+}
+#navbar #navbar-logo #navbar-firstname {
+  letter-spacing: 0.1em;
+}
+#navbar #navbar-logo #navbar-lastname {
+  font-style: italic;
+  letter-spacing: 0.3em;
+}
+#navbar #navbar-gutter {
+  flex-grow: 1;
+}
+#navbar #navbar-menu {
+  display: flex;
+  flex-direction: row;
+  width: 400px;
+  justify-content: space-between;
+  font-size: 16px;
+  font-variant: small-caps;
+  font-style: italic;
+}
+#navbar #navbar-menu .navbar-menu-link {
+  color: black;
+  text-decoration-color: pink;
+  text-decoration: none;
+}
+#navbar #navbar-menu .navbar-menu-link.nav-select {
+  text-shadow: 3px 3px 1px pink;
+}
+#firstname-base {
+  letter-spacing: 0.1em;
+}
+#lastname-base {
+  font-style: italic;
+  letter-spacing: 0.3em;
+}
+#header {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#header #logo {
+  position: relative;
+  padding-left: 10%;
+  padding-right: 10%;
+  margin-bottom: 25px;
+}
+#header #logo #logo-box {
+  width: 175px;
+  height: 175px;
+  background-color: pink;
+  position: absolute;
+}
+#header #logo #name-container {
+  width: auto;
+  position: relative;
+  margin-top: 10%;
+  margin-left: 10%;
+}
+#header #logo #name-container #name {
+  height: 2em;
+  overflow: hidden;
+  pointer-events: none;
+}
+#header #logo #name-container #firstname {
+  letter-spacing: 0.1em;
+}
+#header #logo #name-container #lastname {
+  font-style: italic;
+  letter-spacing: 0.3em;
+}
+#header #logo #event-trigger {
+  height: 175px;
+  width: 80%;
+  background-color: transparent;
+  position: absolute;
+  z-index: 9999;
+}
+#header #logo #event-trigger:hover ~ #logo-box,
+#header #logo #event-trigger.hovered ~ #logo-box {
+  animation: swipe 3s forwards;
+  animation-iteration-count: 1;
+}
+@keyframes swipe {
+  0% {
+    width: 175px;
+    height: 175px;
+  }
+  25% {
+    width: 77%;
+    margin-top: 9%;
+    height: 3em;
+  }
+  75% {
+    right: 13%;
+  }
+  100% {
+    width: 0%;
+    margin-top: 9%;
+    right: 13%;
+    height: 3em;
+  }
+}
+#header #logo #event-trigger:hover ~ #name-container #name,
+#header #logo #event-trigger.hovered ~ #name-container #name {
+  transition: height 1s, text-shadow 1s, margin-top 4s;
+  text-shadow: 6px 6px 0px pink;
+}
+#header #header-menu {
+  padding-left: 20%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+#header #header-menu .header-menu-item {
+  margin-bottom: 5%;
+  font-size: 22px;
+  font-variant: small-caps;
+  font-style: italic;
+}
+#header #header-menu .header-menu-item .header-menu-link {
+  color: black;
+  text-decoration-color: pink;
+  text-decoration: none;
+}
+#header #header-menu .header-menu-item .header-menu-link:hover {
+  text-decoration: underline;
+  text-decoration-color: pink;
+}
+@keyframes fadeInNavbarLogo {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes shiftLeftAndFade {
+  0% {
+    margin-left: 10%;
+    opacity: 1;
+  }
+  75% {
+    margin-left: -10%;
+    opacity: 0;
+    font-size: 14px;
+  }
+  100% {
+    margin-left: -10%;
+    opacity: 0;
+    font-size: 14px;
+    display: none;
+  }
+}

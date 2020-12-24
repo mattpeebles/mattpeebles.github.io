@@ -8,6 +8,19 @@ const fs = require('fs')
 const each = require('gulp-each');
 const replace = require('gulp-replace');
 const rename = require('gulp-rename');
+const clean = require('gulp-clean');
+const through = require('through2')
+
+gulp.task('clean:dist', async function (done)
+{
+  return gulp.src('./dist', {allowEmpty: true}).pipe(clean())
+});
+
+gulp.task('clean:tmp', async function(done){
+  return gulp.src('./tmp', {allowEmpty: true}).pipe(clean());
+});
+
+gulp.task('clean', gulp.series(['clean:dist', 'clean:tmp']));
 
 gulp.task('gulp_nodemon', function ()
 {
@@ -30,37 +43,38 @@ gulp.task('sync', function ()
   gulp.watch(['./**/*.js', './**/*.html', './**/*.css']).on("change", browserSync.reload);
 });
 
-gulp.task('generate-posts-1', function ()
+gulp.task('compile-md', function (done)
 {
   return gulp.src('./src/blog/posts/**/*.md')
     .pipe(markdown())
-    .pipe(gulp.dest('dist/blog/'))
+    .pipe(gulp.dest('./tmp/blog/'));
 })
 
-gulp.task('generate-posts-2', function ()
+gulp.task('generate-posts', gulp.series('compile-md', function (done)
 {
   const testReg = new RegExp(/<h1 id="[\w|-]+">[\w|\s]+<\/h1>/)
+  const boiler = fs.readFileSync(`${__dirname}/src/boilerplate.html`).toString();
 
-  return gulp.src('./dist/blog/**/*.html')
-    .pipe(each(function (content, file, callback)
+  let postTitle;
+  let content;
+
+  return gulp.src(['./tmp/blog/**/*.html'])
+    .pipe(through.obj((file, enc, cb) =>
     {
+      content = file.contents.toString();
       const titleTag = testReg.exec(content)[0]
-      const title = titleTag.replace(/<h1 id="[\w|-]+">/, "").replace(/<\/h1>/, "").trim()
-
-      fs.unlinkSync(file.path)
-
-      console.log(file.path)
-
-      gulp
-        .src(`${__dirname}/src/boilerplate.html`)
-        .pipe(replace('{{BLOGTITLE}}', title))
-        .pipe(replace('{{POSTCONTENT}}', content))
-        .pipe(rename(`.${/\/blog\/.+\.html$/.exec(file.path)[0]}`))
-        .pipe(gulp.dest("./dist"))
+      postTitle = titleTag.replace(/<h1 id="[\w|-]+">/, "").replace(/<\/h1>/, "").trim()
+      file.contents = Buffer.from(boiler);
+      return cb(null, file);
     }))
-})
-
-gulp.task('generate-posts', gulp.series(['generate-posts-1', 'generate-posts-2']))
+    .pipe(replace('{{BLOGTITLE}}', _ => postTitle))
+    .pipe(replace('{{POSTCONTENT}}', _ => content))
+    .pipe(rename(path => {
+      path.basename = path.dirname;
+      path.dirname = `blog`;
+    }))
+    .pipe(gulp.dest("./dist"));
+  }, 'clean:tmp'));
 
 gulp.task('less', function ()
 {
@@ -68,12 +82,12 @@ gulp.task('less', function ()
     .pipe(less({
       paths: [path.join(__dirname, 'less', 'includes')]
     }))
-    .pipe(gulp.dest('./src/assets/css'));
+    .pipe(gulp.dest('./dist/assets/css'));
 });
 
 gulp.task('watch-less', function ()
 {
-  return gulp.watch('./src/**/*.less', gulp.series(['less']));  // Watch all the .less files, then run the less task
+  return gulp.watch('./src/**/*.less', gulp.series(['less']));
 });
 
 gulp.task('watch-md', function ()
@@ -81,6 +95,30 @@ gulp.task('watch-md', function ()
   return gulp.watch('./src/blog/posts/**/*.md', gulp.series(['generate-posts']));  // Watch all the .less files, then run the less task
 });
 
-gulp.task('watch', gulp.parallel('watch-less', 'watch-md'));
+gulp.task('html', function ()
+{
+  return gulp.src(['./src/**/*.html'])
+    .pipe(gulp.dest('./dist/'));
+});
 
-gulp.task('default', gulp.parallel('gulp_nodemon', 'watch', 'sync'));
+gulp.task('watch-html', function ()
+{
+  return gulp.watch('./src/**/*.html', gulp.series(['html']));
+});
+
+gulp.task('js', function ()
+{
+  return gulp.src(['./src/**/*.js'])
+    .pipe(gulp.dest('./dist/'));
+});
+
+gulp.task('watch-js', function ()
+{
+  return gulp.watch('./src/**/*.js', gulp.series(['js']));
+});
+
+gulp.task('watch', gulp.parallel('watch-less', 'watch-md', 'watch-html', 'watch-js'));
+
+gulp.task('build', gulp.series(['clean', 'html', 'js', 'less', () => gulp.src('./src/resources/images/**').pipe(gulp.dest('./dist/resources/images/')), 'generate-posts']))
+
+gulp.task('default', gulp.series(['build', gulp.parallel('gulp_nodemon', 'sync', 'watch')]));
