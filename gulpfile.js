@@ -11,13 +11,14 @@ const rename = require('gulp-rename');
 const clean = require('gulp-clean');
 const through = require('through2')
 
-gulp.task('clean:dist', async function (done)
+gulp.task('clean:dist', function (done)
 {
-  return gulp.src('./dist', {allowEmpty: true}).pipe(clean())
+  return gulp.src('./dist', { allowEmpty: true }).pipe(clean())
 });
 
-gulp.task('clean:tmp', async function(done){
-  return gulp.src('./tmp', {allowEmpty: true}).pipe(clean());
+gulp.task('clean:tmp', function (done)
+{
+  return gulp.src('./tmp', { allowEmpty: true }).pipe(clean());
 });
 
 gulp.task('clean', gulp.series(['clean:dist', 'clean:tmp']));
@@ -40,7 +41,18 @@ gulp.task('sync', function ()
     reloadDelay: 1000 //Important, otherwise syncing will not work
   });
 
-  gulp.watch(['./**/*.js', './**/*.html', './**/*.css']).on("change", browserSync.reload);
+  gulp.watch(['./src/**/*.js', './**/*.html', './**/*.css']).on("change", browserSync.reload);
+});
+
+gulp.task('html', function ()
+{
+  return gulp.src(['./src/**/*.html', '!./src/boilerplate.html', '!./src/blog/**/*.html'])
+    .pipe(gulp.dest('./dist/'));
+});
+
+gulp.task('watch-html', function ()
+{
+  return gulp.watch('./src/**/*.html', gulp.series(['html']));
 });
 
 gulp.task('compile-md', function (done)
@@ -49,6 +61,8 @@ gulp.task('compile-md', function (done)
     .pipe(markdown())
     .pipe(gulp.dest('./tmp/blog/'));
 })
+
+const postList = [];
 
 gulp.task('generate-posts', gulp.series('compile-md', function (done)
 {
@@ -69,12 +83,24 @@ gulp.task('generate-posts', gulp.series('compile-md', function (done)
     }))
     .pipe(replace('{{BLOGTITLE}}', _ => postTitle))
     .pipe(replace('{{POSTCONTENT}}', _ => content))
-    .pipe(rename(path => {
-      path.basename = path.dirname;
-      path.dirname = `blog`;
+    .pipe(rename(path =>
+    {
+      console.log(path)
+      let tmp = path.dirname
+      path.dirname = `blog/${path.dirname}`;
+      postList.push(`<li><a href='${tmp}'>${postTitle}</a></li>`)
     }))
-    .pipe(gulp.dest("./dist"));
-  }, 'clean:tmp'));
+    .pipe(gulp.dest("./dist"))
+}));
+
+
+gulp.task('generate-blog', gulp.series('compile-md', 'generate-posts', function (done)
+{
+  return gulp
+    .src('src/blog/index.html', { allowEmpty: false })
+    .pipe(replace('{{POSTLIST}}', _ => postList.join(' ')))
+    .pipe(gulp.dest("dist/blog/"))
+}))
 
 gulp.task('less', function ()
 {
@@ -95,17 +121,6 @@ gulp.task('watch-md', function ()
   return gulp.watch('./src/blog/posts/**/*.md', gulp.series(['generate-posts']));  // Watch all the .less files, then run the less task
 });
 
-gulp.task('html', function ()
-{
-  return gulp.src(['./src/**/*.html'])
-    .pipe(gulp.dest('./dist/'));
-});
-
-gulp.task('watch-html', function ()
-{
-  return gulp.watch('./src/**/*.html', gulp.series(['html']));
-});
-
 gulp.task('js', function ()
 {
   return gulp.src(['./src/**/*.js'])
@@ -117,8 +132,19 @@ gulp.task('watch-js', function ()
   return gulp.watch('./src/**/*.js', gulp.series(['js']));
 });
 
+gulp.task('resources', () => gulp.src('./src/resources/images/**').pipe(gulp.dest('./dist/resources/images/')))
+
 gulp.task('watch', gulp.parallel('watch-less', 'watch-md', 'watch-html', 'watch-js'));
 
-gulp.task('build', gulp.series(['clean', 'html', 'js', 'less', () => gulp.src('./src/resources/images/**').pipe(gulp.dest('./dist/resources/images/')), 'generate-posts']))
+gulp.task('build', gulp.series(
+  [
+    'clean:dist',
+    'html',
+    'js',
+    'less',
+    'resources',
+    'generate-blog',
+    'clean:tmp']))
+
 
 gulp.task('default', gulp.series(['build', gulp.parallel('gulp_nodemon', 'sync', 'watch')]));

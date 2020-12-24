@@ -13,13 +13,13 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 
-	<link rel="stylesheet" type="text/css" href="../assets/css/header.css" />
-	<link rel="stylesheet" type="text/css" href="../assets/css/main.css" />
-	<link rel="stylesheet" type="text/css" href="../assets/css/blog/blog.css" />
+	<link rel="stylesheet" type="text/css" href="../../assets/css/header.css" />
+	<link rel="stylesheet" type="text/css" href="../../assets/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="../../assets/css/blog/blog.css" />
 	
-	<link rel="stylesheet" type="text/css" href="./main.css">
-	<link rel="stylesheet" type="text/css" href="./blog-style.css">
-	<link rel="stylesheet" type="text/css" href="./blog-post-style.css">
+	<link rel="stylesheet" type="text/css" href="../main.css">
+	<link rel="stylesheet" type="text/css" href="../blog-style.css">
+	<link rel="stylesheet" type="text/css" href="../blog-post-style.css">
 
 
 </head>
@@ -33,14 +33,15 @@
 			<div id="navbar-gutter"></div>
 		</div>
 		<div id="navbar-menu">
-			<div class="navbar-menu-item"><a href="../#summary" class="navbar-menu-link navbar-menu-item-summary">About</a></div>
-			<div class="navbar-menu-item"><a href="../#projects" class="navbar-menu-link navbar-menu-item-projects">Projects</a></div>
-			<div class="navbar-menu-item"><a href="./blog" class="navbar-menu-link navbar-menu-item-blog nav-select">Essays</a></div>
-			<div class="navbar-menu-item"><a href="../#contact" class="navbar-menu-link navbar-menu-item-contact">Contact</a></div>
+			<div class="navbar-menu-item"><a href="../../#summary" class="navbar-menu-link navbar-menu-item-summary">About</a></div>
+			<div class="navbar-menu-item"><a href="../../#projects" class="navbar-menu-link navbar-menu-item-projects">Projects</a></div>
+			<div class="navbar-menu-item"><a href="../blog" class="navbar-menu-link navbar-menu-item-blog nav-select">Essays</a></div>
+			<div class="navbar-menu-item"><a href="../../#contact" class="navbar-menu-link navbar-menu-item-contact">Contact</a></div>
 		</div>
 	</nav>
 
-	<section class="post">
+	<section class="container">
+		<article class="post">
 		<h1 id="as-you-type-validation">As You Type Validation</h1>
 <p>I&#39;ve recently completed a project that required users to create an account in order to use the service. The account uses their email address as a username, so each user must submit a unique email upon account creation otherwise things will get confusing. I wasn&#39;t using a front-end framework, so my solution needed to be pure javascript/jquery.</p>
 <p>I wanted to make the experience seamless for my user so that they didn&#39;t have to submit the form to see if an email was taken. But in order to check my database for a duplicate email, I had to submit an ajax call to my database each time the user typed.</p>
@@ -110,6 +111,7 @@
 <pre><code class="language-css">    input.error{\n    border: 1px solid red;\n}\n\ninput.error:focus{\n    border:1px solid red;\n    box-shadow: 0 0 5px red;\n}\n\ninput.valid{\n    border: 1px solid green;\n}\n\ninput.valid:focus{\n    border:1px solid green;\n    box-shadow: 0 0 5px green;\n}\n</code></pre>
 <p>Now every time the user inputs an appropriate email, they will receive instant feedback about whether it is a valid email and can adjust their input accordingly.</p>
 
+		<article>
 	</section>
 
 </body>

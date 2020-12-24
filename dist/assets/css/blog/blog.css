@@ -1,5 +1,5 @@
-.blog-body #blogSection {
-  min-height: 100vh;
+.container .post {
+  padding: 5% 15%;
 }
 .hidden {
   display: none;
