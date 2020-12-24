@@ -1,19 +1,106 @@
-body{
+body {
     background-color: #fffef1;
-    font-family: 'Open Sans', sans-serif;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    margin: 0px;
-    max-height: 100vh;
-    
-    h2{
+    font-family     : 'Open Sans', sans-serif;
+    height          : 100vh;
+    display         : flex;
+    flex-direction  : column;
+    overflow        : hidden;
+    margin          : 0px;
+    max-height      : 100vh;
+
+    h2 {
         font-family: 'Titillium Web', sans-serif;
     }
 
-    .container{
+    .container {
         flex-grow: 1;
-        overflow: auto;
+        overflow : auto;
+    }
+
+    .section-container{
+        display       : flex;
+        flex-direction: column;
+        padding       : 5% 15%;
+
+        .section-header-container
+        {
+            width: 100%;
+            text-align: center;
+
+            .section-header{
+
+            }
+
+            .section-header-image{
+                height: 250px;
+            }
+
+            .section-header-subtitle{
+
+            }
+        }
+    }
+
+    #summary {
+
+        .summary-container {
+            display       : flex;
+            flex-direction: row;
+            width         : 100%;
+
+            .summary-container {
+                flex-grow: 1;
+            }
+
+            .summary-image {
+
+                border-radius: 100%;
+                border       : 1px solid transparent;
+                overflow     : hidden;
+                width        : 800px;
+                height       : 350px;
+                margin-left  : 50px;
+
+                img {
+                    height: 500px;
+                }
+
+            }
+        }
+
+        .summary-skills {
+            display       : flex;
+            flex-direction: column;
+
+            .skills-list {
+                display        : flex;
+                flex-direction : row;
+                width          : 100%;
+                justify-content: space-between;
+
+                .skills-list-group {
+                    display       : flex;
+                    width         : 30%;
+                    flex-direction: column;
+
+                    .skills-list-group-header {
+                        width: 100%;
+                    }
+
+                    .skills-list-group-detail {
+                        display       : flex;
+                        flex-direction: row;
+
+                        .skills-list-group-icon {
+                            width: 50%;
+                        }
+
+                        .skills-list-group-list {
+                            width: 50%;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
