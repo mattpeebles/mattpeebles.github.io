@@ -5,12 +5,12 @@ const path = require('path');
 const less = require('gulp-less');
 const markdown = require('gulp-markdown');
 const fs = require('fs')
-const each = require('gulp-each');
 const replace = require('gulp-replace');
 const rename = require('gulp-rename');
 const clean = require('gulp-clean');
 const through = require('through2')
-
+const concat = require('gulp-concat');
+const clean_css = require('gulp-clean-css');
 gulp.task('clean:dist', function (done)
 {
   return gulp.src('./dist', { allowEmpty: true }).pipe(clean())
@@ -51,7 +51,6 @@ const getPath = (pattern) => pattern.split("{{")[1].split("}}")[0];
 const replaceTemplate = (match) =>
 {
   const templatePath = getPath(match);
-  console.log(templatePath)
   let cachedTemplate = templateCache[templatePath];
   if (cachedTemplate == null || cachedTemplate == undefined)
   {
@@ -114,6 +113,8 @@ gulp.task('generate-posts', gulp.series('compile-md', function (done)
 
 gulp.task('generate-blog', gulp.series('compile-md', 'generate-posts', function (done)
 {
+console.log(postList)
+
   return gulp
     .src('src/essays/index.html', { allowEmpty: false })
     .pipe(replace('{{POSTLIST}}', _ => postList.join(' ')))
@@ -127,6 +128,9 @@ gulp.task('less', function ()
     .pipe(less({
       paths: [path.join(__dirname, 'less', 'includes')]
     }))
+    .pipe(gulp.src('./src/**/*.css'))
+    .pipe(concat('main.min.css'))
+    .pipe(clean_css())
     .pipe(gulp.dest('./dist/assets/css'));
 });
 
@@ -151,7 +155,7 @@ gulp.task('watch-js', function ()
   return gulp.watch('./src/**/*.js', gulp.series(['js']));
 });
 
-gulp.task('resources', () => gulp.src('./src/resources/images/**').pipe(gulp.dest('./dist/resources/images/')))
+gulp.task('resources', () => gulp.src('./src/resources/**').pipe(gulp.dest('./dist/resources/')))
 
 gulp.task("clear-template-cache", function(done) {
   templateCache = {};
