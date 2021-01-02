@@ -29,6 +29,7 @@ function adjustLogos(shrink)
 		if (isEventTriggerVisible() == false && navbarLogoCanAnimateIn)
 		{
 			navbarLogoCanAnimateIn = false;
+			navbarLogo.removeClass("hidden");
 			navbarLogo.animate({
 				opacity: 1
 			}, 1000, () =>
@@ -48,6 +49,7 @@ function adjustLogos(shrink)
 			}, 500, () => 
 			{
 				navbarLogoCanAnimateOut = true;
+				navbarLogo.addClass('hidden');
 			})
 		}
 	}
@@ -66,25 +68,6 @@ function stickyNav()
 		$('#name').removeClass('sticky');
 	}
 };
-
-function smoothScroll()
-{
-	// $('a[href*="#"]').on('click', function (e)
-	// {
-	// 	e.preventDefault();
-
-	// 	console.log('yo')
-
-	// 	if ($($.attr(this, 'href')).length > 0)
-	// 	{
-	// 		$('html, body').animate(
-	// 			{
-	// 				scrollTop: $($.attr(this, 'href')).offset().top
-	// 			}, 400);
-	// 	}
-	// 	return false;
-	// });
-}
 
 function highlightCurrentSection()
 {
@@ -115,33 +98,14 @@ function isVisible(item)
 	return item.visible(true);
 }
 
-// function prettifyUrl(){
-// 	history.replaceState("", document.title, window.location.pathname)
-// }
-
-// function highlight(){
-// 	if($('#summaryNav').hasClass('active')){
-// 		$('#navHeader').addClass('highlight');
-// 	}
-// 	else{
-// 		$('#navHeader').removeClass('highlight');
-// 	}
-// }
-
 $(() =>
 {
-	// stickyNav()
 	logoSetup()
-	smoothScroll()
-	// highlight()
-	// navBarHide()
-	// prettifyUrl()
 
 	let lastScrollTop = window.pageYOffset || $(window).scrollTop()
 
 	$(".container").scroll((x) =>
 	{
-		// stickyNav()
 		let currentOffset = $(".container").scrollTop();
 		let shrink = lastScrollTop < currentOffset;
 		lastScrollTop = currentOffset;

@@ -54,15 +54,14 @@ body {
 
             .summary-image {
 
-                border-radius: 100%;
-                border       : 1px solid transparent;
-                overflow     : hidden;
-                width        : 800px;
-                height       : 350px;
-                margin-left  : 50px;
+                margin-left: 50px;
+                height: 300px;
+                width: auto;
 
                 img {
-                    height: 500px;
+                    width: 300px;
+                    height: auto;
+                    border-radius: 100%;
                 }
 
             }
@@ -103,4 +102,36 @@ body {
             }
         }
     }
+
+    #contact
+    {
+        height: 88vh;
+
+        .contact-info-container
+        {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+
+            .contact-info-list{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+
+                .contact-info-item{
+                    display: flex;
+                    flex-direction: row;
+
+                    .contact-info-icon{
+                        height: 25px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.hidden{
+    display: none!important;
 }

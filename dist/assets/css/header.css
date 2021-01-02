@@ -8,6 +8,7 @@
   display: flex;
   flex-direction: row;
   top: 0;
+  height: auto;
 }
 #navbar #navbar-menu-button {
   text-align: right;
@@ -173,5 +174,10 @@
     opacity: 0;
     font-size: 14px;
     display: none;
+  }
+}
+@media (max-width: 768px) {
+  #navbar {
+    padding-right: 10px;
   }
 }

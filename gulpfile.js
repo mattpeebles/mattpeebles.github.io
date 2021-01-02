@@ -44,15 +44,33 @@ gulp.task('sync', function ()
   gulp.watch(['./src/**/*.js', './**/*.html', './**/*.css']).on("change", browserSync.reload);
 });
 
+let templateCache = {};
+const templateRegex = /{{.*}}/g
+
+const getPath = (pattern) => pattern.split("{{")[1].split("}}")[0];
+const replaceTemplate = (match) =>
+{
+  const templatePath = getPath(match);
+  console.log(templatePath)
+  let cachedTemplate = templateCache[templatePath];
+  if (cachedTemplate == null || cachedTemplate == undefined)
+  {
+    cachedTemplate = fs.readFileSync(`${__dirname}/src/templates/${templatePath}`).toString();
+    templateCache[templatePath] = cachedTemplate;
+  }
+  return cachedTemplate;
+}
+
 gulp.task('html', function ()
 {
-  return gulp.src(['./src/**/*.html', '!./src/essays/**/*.html'])
+  return gulp.src(['./src/**/*.html', '!./src/essays/**/*.html', '!./src/templates/**/*.html'])
+    .pipe(replace(templateRegex, replaceTemplate))
     .pipe(gulp.dest('./dist/'));
 });
 
 gulp.task('watch-html', function ()
 {
-  return gulp.watch('./src/**/*.html', gulp.series(['html']));
+  return gulp.watch(['./src/**/*.html', '!./src/templates/**/*.html'], gulp.series(['html']));
 });
 
 gulp.task('compile-md', function (done)
@@ -62,7 +80,7 @@ gulp.task('compile-md', function (done)
     .pipe(gulp.dest('./tmp/essays/'));
 })
 
-const postList = [];
+let postList = [];
 
 gulp.task('generate-posts', gulp.series('compile-md', function (done)
 {
@@ -83,9 +101,9 @@ gulp.task('generate-posts', gulp.series('compile-md', function (done)
     }))
     .pipe(replace('{{BLOGTITLE}}', _ => postTitle))
     .pipe(replace('{{POSTCONTENT}}', _ => content))
+    .pipe(replace(templateRegex, replaceTemplate))
     .pipe(rename(path =>
     {
-      console.log(path)
       let tmp = path.dirname
       path.dirname = `essays/${path.dirname}`;
       postList.push(`<li><a href='${tmp}'>${postTitle}</a></li>`)
@@ -99,6 +117,7 @@ gulp.task('generate-blog', gulp.series('compile-md', 'generate-posts', function 
   return gulp
     .src('src/essays/index.html', { allowEmpty: false })
     .pipe(replace('{{POSTLIST}}', _ => postList.join(' ')))
+    .pipe(replace(templateRegex, replaceTemplate))
     .pipe(gulp.dest("dist/essays/"))
 }))
 
@@ -134,7 +153,18 @@ gulp.task('watch-js', function ()
 
 gulp.task('resources', () => gulp.src('./src/resources/images/**').pipe(gulp.dest('./dist/resources/images/')))
 
-gulp.task('watch', gulp.parallel('watch-less', 'watch-md', 'watch-html', 'watch-js'));
+gulp.task("clear-template-cache", function(done) {
+  templateCache = {};
+  postList = [];
+  return done();
+})
+
+gulp.task("template-watch", function ()
+{
+  return gulp.watch('./src/templates/*.html', gulp.series(['clear-template-cache','build']))
+})
+
+gulp.task('watch', gulp.parallel('watch-less', 'watch-md', 'watch-html', 'watch-js', 'template-watch'));
 
 gulp.task('build', gulp.series(
   [

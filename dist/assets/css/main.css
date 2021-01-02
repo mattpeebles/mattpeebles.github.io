@@ -36,15 +36,14 @@ body #summary .summary-container .summary-container {
   flex-grow: 1;
 }
 body #summary .summary-container .summary-image {
-  border-radius: 100%;
-  border: 1px solid transparent;
-  overflow: hidden;
-  width: 800px;
-  height: 350px;
   margin-left: 50px;
+  height: 300px;
+  width: auto;
 }
 body #summary .summary-container .summary-image img {
-  height: 500px;
+  width: 300px;
+  height: auto;
+  border-radius: 100%;
 }
 body #summary .summary-skills {
   display: flex;
@@ -73,4 +72,28 @@ body #summary .summary-skills .skills-list .skills-list-group .skills-list-group
 }
 body #summary .summary-skills .skills-list .skills-list-group .skills-list-group-detail .skills-list-group-list {
   width: 50%;
+}
+body #contact {
+  height: 88vh;
+}
+body #contact .contact-info-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+body #contact .contact-info-container .contact-info-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+body #contact .contact-info-container .contact-info-list .contact-info-item {
+  display: flex;
+  flex-direction: row;
+}
+body #contact .contact-info-container .contact-info-list .contact-info-item .contact-info-icon {
+  height: 25px;
+}
+.hidden {
+  display: none!important;
 }
