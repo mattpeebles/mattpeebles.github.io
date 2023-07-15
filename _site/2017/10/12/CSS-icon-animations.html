@@ -1,0 +1,196 @@
+<!doctype html>
+
+<head>
+    <meta charset="utf-8">
+<meta name="description" content="Portfolio Site for Matt Peebles">
+<meta name="author" content="Matt Peebles">
+<meta name="viewport" content="width=device-width, height=device-height">
+<title>Matt Peebles</title>
+<link rel="shortcut icon" href="./resources/images/hero-image.png" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="/main.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        /*CSS Icon Animation*/
+        .arrowFinal {
+            height: 90px;
+            text-align: center;
+        }
+
+        .iconFinal {
+            animation-name: down-gesture;
+            animation-duration: 1.2s;
+            animation-iteration-count: infinite;
+            font-size: 48px;
+        }
+
+        @keyframes down-gesture {
+            0% {
+                padding-top: 20px;
+            }
+
+            50% {
+                padding-top: 30px;
+            }
+
+            100% {
+                padding-top: 20px;
+            }
+        }
+
+        /********/
+    </style>
+</head>
+
+<body>
+    <nav id="nav">
+    <div>
+        Matt Peebles
+    </div>
+    <div id="sections">
+        
+        <a href="/resume.html" >
+          Resume
+        </a>
+      
+        <a href="/essays.html" >
+          Essays
+        </a>
+      
+        <a href="art.html" >
+          Art
+        </a>
+      
+    </div>
+</nav>
+
+    <div class="postContent">
+        <h1 id="cssiconanimation">CSS Icon Animation</h1>
+        <p>12 Oct 2017</p>
+        <p>I've begun exploring minor css animations and stylings. I'll demonstrate an animation that I've recently used
+            in one of my projects and explain how you can use them in your webpages yourself.</p>
+        <p>The animation is an animated down arrow icon to inform your user that they should continue to scroll down to
+            explore the webpage. I most recently used it in my <a href="/">portfolio site</a> to
+            encourage the user to explore past the 100vh hero image with my name.</p>
+        <div class="arrowFinal">
+            <i class="material-icons iconFinal">
+                keyboard_arrow_down
+            </i>
+        </div>
+        <p>First, we'll wrap our icon in a parent div. This particular animation requires that the parent has a set
+            height. This is because our animation effects the <em>padding</em> of the icon. If our parent had no set
+            height, it would automatically adjust for the animated padding and not actually give the illusion of
+            animating the icon. </p>
+        <p><code><div class="arrowExample1"></div></code></p>
+        <p>We'll give our <code>#arrowExample</code> div, a height of <code>90px</code>. Then we need an icon to
+            animate. Google has a decent set of icons as part of their material design initiative. They're extremely
+            easy to integrate. Instructions and more can be found <a href="https://material.io/icons/">here</a>.</p>
+        <pre><code>&lt;div class="arrowExample2"&gt;
+        &lt;i class="material-icons iconExample2"&gt;
+            keyboard_arrow_down
+        &lt;/i&gt;
+    &lt;/div&gt;
+    </code></pre>
+        <p>Now that we have our HTML set up, we can begin styling. </p>
+        <p>The animation property allows for shorthand passing of a number of animation properties. These are, in order,
+            duration, timing-function, delay, iteration-count, direction, fill-mode, play-state, and name. </p>
+        <p>You can also call the specific animation property associated with the shorthand syntax above, just prepend
+            <code>animation-</code> to those you'd like to call individually. I'll be demonstrating both later on.
+        </p>
+        <p>Our actual animation is called in the <strong>name</strong> property. </p>
+        <p>This name property specifics an <code>@keyframes</code> rule that you create yourself. So for our example,
+            we'll need to create a custom animation that gives us the <code>down-gesture</code> animation that we want.
+        </p>
+        <p>To do this, we'll create <code>@keyframes down-gesture{}</code> style rule. </p>
+        <p>Within the <code>@keyframes</code>, we begin the actual process of animation by detailing the start and ends
+            state style rules. These are called by passing <code>from/0%</code> and <code>to/100%</code> respectively.
+        </p>
+        <p>Since we'd like our animation to smoothly go from beginning to end and back again, we'll be using the more
+            precise percentages. These allow you to specify not only the start and end state but also every state in
+            between.</p>
+        <pre><code>.iconExample2{
+       animation-name: down-gesture;
+    }
+    
+    @keyframes down-gesture{
+       0%{}
+       50%{}
+       100%{}
+    }
+    </code></pre>
+        <p>You can think of the start and end states as subrules for the css to follow as it moves along the animation.
+        </p>
+        <p>Since we want it to smoothly cycle through the start and end states, our <code>0%</code> and
+            <code>100%</code> will be the same. Our <code>50%</code> subrule will be the apex of our animation and is
+            where the actual animation takes place.
+        </p>
+        <pre><code>@keyframes down-gesture{
+       0%{
+          padding-top: 20px;
+       }
+       50%{
+         padding-top: 30px;
+       }
+       100%{
+          padding-top: 20px;
+       }
+    }
+    </code></pre>
+        <p>So to recap, down-gesture will apply a padding of 20px to our icon. The padding will increase to 28px until
+            the animation is halfway complete. Once it reaches the 50% point, it will reduce padding back down to 20px.
+        </p>
+        <p>The amount of time it takes for your animation to complete is set in the <code>duration property</code> and
+            the amount of times it cycles through the animation is set in the <code>iteration-count</code> count
+            property. We'll set these to <code>1.5s</code> and <code>infinite</code> respectively. This is, of course,
+            where you get to play with the settings to find out what's right for you.</p>
+        <pre><code>.iconExample2{
+       animation-name: down-gesture;
+       animation-duration: 1.2s;
+       animation-iteration-count: infinite;
+    }
+    </code></pre>
+        <p>or</p>
+        <pre><code>.iconExample2{
+       animation: 1.5s infinite down-gesture;
+    }
+    </code></pre>
+        <p>And that's it! Our down-gesture arrow is now animated. In the end, our css will look like</p>
+        <div class="arrowFinal">
+            <i class="material-icons iconFinal">
+                keyboard_arrow_down
+            </i>
+        </div>
+
+        <pre><code>
+     &lt;div class="arrowFinal"&gt;
+        &lt;i class="material-icons iconFinal"&gt;
+             keyboard_arrow_down
+        &lt;/i&gt;
+    &lt;/div&gt;
+    </code></pre>
+        <pre><code>.arrowFinal{
+      height: 90px;
+    }
+    
+    .iconFinal{
+       animation-name: down-gesture;
+       animation-duration: 1.2s;
+      animation-iteration-count: infinite;
+    }
+    
+    @keyframes down-gesture{
+       0%{
+          padding-top: 20px;
+       }
+       50%{
+         padding-top: 30px;
+       }
+       100%{
+          padding-top: 20px;
+       }
+    }
+    </code></pre>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+<nav id="nav">
+    <div>
+        Matt Peebles
+    </div>
+    <div id="sections">
+        {% for item in site.data.navigation %}
+        <a href="{{ item.link }}" {% if page.url == item.link %}style="color: red;"{% endif %}>
+          {{ item.name }}
+        </a>
+      {% endfor %}
+    </div>
+</nav>
