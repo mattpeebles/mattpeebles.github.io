@@ -1,0 +1,41 @@
+@import "themes";
+
+html {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+body {
+    @include themed() {
+        color: t($text);
+        background: t($bg);
+    }
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+article {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#sections {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    justify-content: space-evenly;
+}
+
+.social {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}

@@ -1,0 +1,42 @@
+#essay {
+ 
+    @include for_breakpoint(tablet landscape){
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+    
+    @include for_breakpoint(tablet portrait){
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+    
+    @include for_breakpoint(mobile){
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    @include for_breakpoint(desktop){
+        padding-left: 25%;
+        padding-right: 25%;
+    }
+
+    #header {
+        h1 {
+            font-weight: 600;
+        }
+
+        #date {
+            font-style: italic;
+        }
+
+        #quote {
+            font-style: italic;
+        }
+    }
+
+    .footnotes {
+        @media only screen and (max-width: 667px), only screen and (min-width: (1025px)){
+
+        }
+    }
+}

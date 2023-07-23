@@ -1,0 +1,57 @@
+#nav {
+    display: flex;
+    flex-direction: row;
+
+    #theme-toggle {
+        font-size: 20px;
+        width: 15px;
+        height: 15px;
+    }
+
+    @include themed() {
+        #theme-toggle {
+
+            &:hover {
+                opacity: .8;
+
+                &:before {
+                    display: none;
+                    content: none;
+                }
+            }
+        }
+
+        a {
+            color: t($link) !important;
+
+            &:hover,
+            &.active {
+                color: t($link) !important;
+            }
+        }
+
+    }
+
+    a {
+        padding: 0;
+        background: transparent !important;
+        text-decoration: none;
+
+        &:hover,
+        &.active {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+
+}
+
+.theme--dark {
+    #nav {
+        #theme-toggle {
+            svg {
+                color: #ffd475;
+            }
+        }
+    }
+}

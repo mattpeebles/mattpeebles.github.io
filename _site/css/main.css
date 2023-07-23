@@ -1,0 +1,128 @@
+/* Media Queries */
+html {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+body {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.theme--light body {
+  color: #408bbd;
+  background: #fff;
+}
+.theme--dark body {
+  color: #ddd;
+  background: #222;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+article {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#sections {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  justify-content: space-evenly;
+}
+
+.social {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+@media only screen and (min-width: 668px) and (max-width: 1024px), screen and (orientation:landscape) {
+  #essay {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+}
+@media only screen and (min-width: 668px) and (max-width: 1024px), screen and (orientation:portrait) {
+  #essay {
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+}
+@media only screen and (max-width: 667px) {
+  #essay {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  #essay {
+    padding-left: 25%;
+    padding-right: 25%;
+  }
+}
+#essay #header h1 {
+  font-weight: 600;
+}
+#essay #header #date {
+  font-style: italic;
+}
+#essay #header #quote {
+  font-style: italic;
+}
+#nav {
+  display: flex;
+  flex-direction: row;
+}
+#nav #theme-toggle {
+  font-size: 20px;
+  width: 15px;
+  height: 15px;
+}
+.theme--light #nav #theme-toggle:hover {
+  opacity: 0.8;
+}
+.theme--light #nav #theme-toggle:hover:before {
+  display: none;
+  content: none;
+}
+.theme--light #nav a {
+  color: #3e4e53 !important;
+}
+.theme--light #nav a:hover, .theme--light #nav a.active {
+  color: #3e4e53 !important;
+}
+.theme--dark #nav #theme-toggle:hover {
+  opacity: 0.8;
+}
+.theme--dark #nav #theme-toggle:hover:before {
+  display: none;
+  content: none;
+}
+.theme--dark #nav a {
+  color: #cac3bc !important;
+}
+.theme--dark #nav a:hover, .theme--dark #nav a.active {
+  color: #cac3bc !important;
+}
+#nav a {
+  padding: 0;
+  background: transparent !important;
+  text-decoration: none;
+}
+#nav a:hover, #nav a.active {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.theme--dark #nav #theme-toggle svg {
+  color: #ffd475;
+}
+
+/*# sourceMappingURL=main.css.map */
