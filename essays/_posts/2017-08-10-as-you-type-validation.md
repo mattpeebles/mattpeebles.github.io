@@ -1,6 +1,7 @@
 ---
 layout: post
 author: matt
+tags: [frontend]
 ---
 I've recently completed a project that required users to create an account in order to use the service. The account uses their email address as a username, so each user must submit a unique email upon
 account creation otherwise things will get confusing. I wasn't using a front-end framework, so my solution needed to
