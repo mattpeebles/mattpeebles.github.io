@@ -1,20 +1,20 @@
-@import "themes";
-
 html {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    background-color: var(--main-background-color);
 }
 
 body {
-    @include themed() {
-        color: t($text);
-        background: t($bg);
-    }
     padding: 5px;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    color: var(--main-text-color);
+}
+
+a{
+    color: var(--link-color);
 }
 
 .underline {

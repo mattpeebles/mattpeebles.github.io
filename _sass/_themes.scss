@@ -1,41 +1,27 @@
-$bg: 'bg';
-$card-bg: 'card-bg';
-$text: 'text';
-$text-secondary: 'text-secondary';
-$link: 'link';
-$hover: 'hover';
+$light-bg: #fff;
+$light-text: #408bbd;
+$light-text-secondary: #408bbd;
+$light-link: #3e4e53;
+$light-hover: #61b0e7;
 
-$themes: (
-  light: (
-    bg: #fff,
-    text: #408bbd,
-    text-secondary: #408bbd,
-    link: #3e4e53,
-    hover: #61b0e7,
-  ),
-  dark: (
-    bg: #222,
-    text: #ddd,
-    text-secondary: #aaa,
-    link: #cac3bc,
-    hover: #ddd,
-  ),
-);
+$dark-bg: #222;
+$dark-text: #ddd;
+$dark-text-secondary: #aaa;
+$dark-link: #cac3bc;
+$dark-hover: #ddd;
 
-@mixin themed() {
-  @each $theme, $map in $themes {
-    .theme--#{$theme} & {
-      $theme-map: () !global;
-      @each $key, $submap in $map {
-        $value: map-get(map-get($themes, $theme), '#{$key}');
-        $theme-map: map-merge($theme-map, ($key: $value)) !global;
-      }
-      @content;
-      $theme-map: null !global;
-    }
-  }
+html {
+  --light-text-color: #{$light-text-secondary};
+  --link-color: #{$light-link};
+  --main-background-color: #{$light-bg};
+  --main-text-color: #{$light-text};
 }
 
-@function t($key) {
-  @return map-get($theme-map, $key);
+@media (prefers-color-scheme: dark) {
+  html {
+    --light-text-color: #{$dark-text-secondary};
+    --link-color: #{$dark-link};
+    --main-background-color: #{$dark-bg};
+    --main-text-color: #{$dark-text};
+  }
 }

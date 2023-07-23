@@ -8,30 +8,6 @@
         height: 15px;
     }
 
-    @include themed() {
-        #theme-toggle {
-
-            &:hover {
-                opacity: .8;
-
-                &:before {
-                    display: none;
-                    content: none;
-                }
-            }
-        }
-
-        a {
-            color: t($link) !important;
-
-            &:hover,
-            &.active {
-                color: t($link) !important;
-            }
-        }
-
-    }
-
     a {
         padding: 0;
         background: transparent !important;
@@ -44,14 +20,4 @@
         }
     }
 
-}
-
-.theme--dark {
-    #nav {
-        #theme-toggle {
-            svg {
-                color: #ffd475;
-            }
-        }
-    }
 }
