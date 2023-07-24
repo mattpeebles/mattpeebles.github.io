@@ -1,6 +1,0 @@
-collections:
-  - essays
-  - arts
-sass:
-    sass_dir: _sass
-    style: compressed
