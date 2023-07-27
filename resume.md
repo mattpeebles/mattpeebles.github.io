@@ -1,5 +1,5 @@
 ---
-layout: resume
+layout: default
 title: Resume
 ---
 ## Senior Software Engineer, Fashion

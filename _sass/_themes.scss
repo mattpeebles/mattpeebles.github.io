@@ -25,3 +25,31 @@ html {
     --main-text-color: #{$dark-text};
   }
 }
+
+@include for_breakpoint(tablet landscape) {
+  html {
+    --body-padding-left: 20%;
+    --padding-right: 20%;
+  }
+}
+
+@include for_breakpoint(tablet portrait) {
+  html {
+    --padding-left: 15%;
+    --padding-right: 15%;
+  }
+}
+
+@include for_breakpoint(mobile) {
+  html {
+    --padding-left: 5%;
+    --padding-right: 5%;
+  }
+}
+
+@include for_breakpoint(desktop) {
+  html {
+    --padding-left: 25%;
+    --padding-right: 25%;
+  }
+}

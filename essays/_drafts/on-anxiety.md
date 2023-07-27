@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: essay
 quote: You clearly want to make some shit. So why not just make it.
 attribution: Tyler, the Creator
 tags: [anxiety, creativity]
@@ -19,7 +19,7 @@ And the things in my head, were not impressing me either.
 
 The root of my anxiety largely comes from this mismatch. I had an urge to create but no means of expressing that feeling, _in a way that was adequate to me_. In a way that was exceptional to me. 
 
-This is a familiar catch 22 to people who create, I believe. It's been addressed in a number of media[^1] [^2] and this feeling is shared[^3] [^4]. The only way to get better is to create. But you have to be vulnerable to do that. And to the hardest audience, yourself. 
+This is a familiar catch 22 to people who create, I believe. It's been addressed in a number of media[^ira] [^rick] and this feeling is shared[^jude] [^tyler]. The only way to get better is to create. But you have to be vulnerable to do that. And to the hardest audience, yourself. 
 
 Often times, I imagined that the things I would create are would be for others. I think that's fine. But I don't think it'll end up as authentic if the thing you're creating is intended to be artistic. It can certainly end up skilled and impressive.  But that's the goal. To seem skilled and impressive to other people. 
 
@@ -31,10 +31,10 @@ The antidote for all of this is simple. Create things you like.
 
 ---
 
-[^1]: [Ira Glass On Story Telling](https://vimeo.com/24715531)
-[^2]: [The Creative Act by Rick Rubin](https://sites.prh.com/thecreativeact) - Frankly the entire book, but the Self-Doubt chapter talks about it explicitly
-[^3]: [@judearden](https://www.tiktok.com/@judearden/video/7239708263481232682)
-[^4]: [All Star Series: Tyler Talk, Paris - Confidence in your Art](https://youtu.be/Z90f1-zWg0c?t=3655)
+[^ira]: [Ira Glass On Story Telling](https://vimeo.com/24715531)
+[^rick]: [The Creative Act by Rick Rubin](https://sites.prh.com/thecreativeact) - Frankly the entire book, but the Self-Doubt chapter talks about it explicitly
+[^jude]: [@judearden](https://www.tiktok.com/@judearden/video/7239708263481232682)
+[^tyler]: [All Star Series: Tyler Talk, Paris - Confidence in your Art](https://youtu.be/Z90f1-zWg0c?t=3655)
 
 
 

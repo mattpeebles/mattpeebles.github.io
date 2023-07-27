@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: essay
 author: matt
 tags: [frontend]
 ---
