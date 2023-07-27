@@ -29,13 +29,7 @@ An anxiety of not being good enough to express who I am. An anxiety of being goo
 
 The antidote for all of this is simple. Create things you like.
 
----
-
-[^ira]: [Ira Glass On Story Telling](https://vimeo.com/24715531)
-[^rick]: [The Creative Act by Rick Rubin](https://sites.prh.com/thecreativeact) - Frankly the entire book, but the Self-Doubt chapter talks about it explicitly
-[^jude]: [@judearden](https://www.tiktok.com/@judearden/video/7239708263481232682)
-[^tyler]: [All Star Series: Tyler Talk, Paris - Confidence in your Art](https://youtu.be/Z90f1-zWg0c?t=3655)
-
-
-
-
+[^ira]: [Ira Glass On Story Telling](https://vimeo.com/24715531){:target="blank"}
+[^rick]: [The Creative Act by Rick Rubin](https://sites.prh.com/thecreativeact){:target="blank"} - Frankly the entire book, but the Self-Doubt chapter talks about it explicitly
+[^jude]: [@judearden](https://www.tiktok.com/@judearden/video/7239708263481232682){:target="blank"}
+[^tyler]: [All Star Series: Tyler Talk, Paris - Confidence in your Art](https://youtu.be/Z90f1-zWg0c?t=3655){:target="blank"}

@@ -1,7 +1,14 @@
 #nav {
     display: flex;
     flex-direction: row;
-    height: 50px;
+    height: var(--navbar-height);
+    position: fixed;
+    width: 100%;
+    background-color: var(--main-background-color);
+
+    & + article{
+        margin-top: var(--navbar-height);
+    }
 
     &>div {
         display: flex;

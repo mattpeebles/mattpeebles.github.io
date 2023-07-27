@@ -15,6 +15,7 @@ html {
   --link-color: #{$light-link};
   --main-background-color: #{$light-bg};
   --main-text-color: #{$light-text};
+  --navbar-height: 50px;
 }
 
 @media (prefers-color-scheme: dark) {
