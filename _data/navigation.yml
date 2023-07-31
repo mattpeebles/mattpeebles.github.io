@@ -1,6 +1,4 @@
-- name: Resume
-  link: /resume.html
 - name: Essays
   link: /essays.html
-- name: Art
-  link: /art.html
+# - name: Art
+#   link: /art.html

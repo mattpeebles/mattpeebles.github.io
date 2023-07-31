@@ -1,11 +1,9 @@
 ---
-layout: default
+layout: center
 title: Essays
 ---
-<h1>Latest Posts</h1>
-
-<ul>
+<div id="post-list">
   {% for post in site.categories.essays %}
-    {% include post_list_item.html %}
+  {% include post_list_item.html %}
   {% endfor %}
-</ul>
+</div>

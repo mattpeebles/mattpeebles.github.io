@@ -1,14 +1,4 @@
 #essay {
-    padding: 5px;
-    padding-left: var(--padding-left);
-    padding-right: var(--padding-right);
-
-    @include for_breakpoint(desktop){
-        #body{
-            margin-bottom: 5%;
-        }
-    }
-
     #header {
         h1 {
             font-weight: 600;
