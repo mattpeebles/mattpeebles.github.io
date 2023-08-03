@@ -5,31 +5,53 @@ attribution: Tyler, the Creator
 tags: [anxiety, creativity]
 ---
 
-There it's done. First words finally written with the intention of being published. 
+There. Done. My first words written with the intention of being put out into the world. It's felt insurmontable at times, but at least these words are written. Though, maybe it takes more than just a couple of words.
 
-Apparently, it takes more than just a couple of words. Perhaps it'll be several articles before I feel comfortable writing.
+I already hate the meta tone this is taking. Nevertheless, let's just write something and see where it leads us.
 
-I already hate the meta tone this is taking. But let's just get something written and we will see where it takes us.
+Now onto anxiety—specifically, artistic anxiety. I feel a compelling urge to create. I believe I've felt this way for my entire life, though I became particularly aware of it in my early twenties. Prior to that, I'm sure the urge was there, but I hadn't yet developed an inner critic. So, the things I created were simply products of my creativity, not a reflection of my identity or an indication of my skill.
 
-Okay, so on anxiety. I feel a powerful urge to create. I think for my entire life, but most definitively around around the age of 22. Prior to that, I think it was there but not a **drive**. I just wasn't compelled to learn to draw or play an instrument or take photos. 
+That changed at some point. I noticed that I wanted to create, but couldn't at the level I wanted to. I couldn't express myself adequately since everything I was creating was failing to impress me. I tried a bunch of media - paint, drawing, photography, writing, poetry, caning[^caning], guitar, and more. 
 
-That changed. No reason to get into why but it was there and I lacked the language to express it. At multiple levels. I couldn't articulate it (still can't well). I couldn't express it since everything I was creating was failing to impress me. So I didn't do much since I was tired of finding things not as I had them in my head.
+Each time I picked up a new medium, I did some amateur work (of course) and I was disappointed in myself. And each time, I dropped it and moved on to the next. The body of work I did was nonexistent since I was tired of finding things not as I had them in my head. 
 
-And the things in my head, were not impressing me either. 
+And, crucially, the things in my head were not impressing me either. 
 
-The root of my anxiety largely comes from this mismatch. I had an urge to create but no means of expressing that feeling, _in a way that was adequate to me_. In a way that was exceptional to me. 
+I believe the root of my anxiety largely comes from this mismatch. I had an urge to create but had no means of expressing that feeling—not only adequately, but _exceptionally_. 
 
-This is a familiar catch 22 to people who create, I believe. It's been addressed in a number of media[^ira] [^rick] and this feeling is shared[^jude] [^tyler]. The only way to get better is to create. But you have to be vulnerable to do that. And to the hardest audience, yourself. 
+Additionally, the thought of putting my art out there was terrifying. Once it's out there, it's no longer mine and becomes subject to external critique.
 
-Often times, I imagined that the things I would create are would be for others. I think that's fine. But I don't think it'll end up as authentic if the thing you're creating is intended to be artistic. It can certainly end up skilled and impressive.  But that's the goal. To seem skilled and impressive to other people. 
+Dilemma:
+1. Want to create. 
+2. Pick a medium at random and create something.
+3. Be afraid to put it out into the world
+4. Be disappointed
+5. Don't create for awhile
+6. Be envious of those who seemingly can create effortlessly
+7. After a time, move to the next medium
+8. Repeat ad nauseum
 
-I've found it exceptionally hard to create things that seem skilled and impressive to me. One because I am unskilled at creating things. And two, I don't know what that looks like.
+This dilemma[^idio] is familiar[^jude] to anyone who wants to create. So familiar, that it's been addressed in radio[^ira], print[^rick], comics[^sarah], and countless other ways.
 
-An anxiety of not being good enough to express who I am. An anxiety of being good enough to express who I am and still finding it lacking. An anxiety of wasted years. An anxiety of being known. An anxiety of being understood.
+The only way to get better is to create[^tyler] a lot. You need to put it out there, move on to the next thing, and be vulnerable. You just need to acknowledge that all great things are built on a mountain of shit.
 
-The antidote for all of this is simple. Create things you like.
+This cycle is uncomfortable because it is hard and lasts for years. It takes awhile to climb shit mountain.
 
+As a result, I've found it hard to create things that seem skilled to me because I also stop one step onto the mountain and then become anxious that I'm not at the peak already.
+
+Then even if we begin making progress we get the downstream anxieties - an anxiety of not being good enough to express who I am. An anxiety of achieving the ability to express who I am and still finding it lacking. An anxiety of wasted years. An anxiety of being understood.
+
+The antidote for all of this is deceptively simple. Listen to the people who create. They all say the same thing. Create things. Create a bunch of things, put whatever is out there into the world, and move on. You'll gain fluency, skill, and insight into the things you like and have the ability to express that.
+
+I've tried putting this into practice. I picked up guitar lessons in early 2022 and I've stuck with it for 18 months![^pascal] I still tell everybody that I can't play guitar but, you know, I'm slowly starting to enjoy myself while I play. That's been a huge barrier for me and I'm proud to have overcome it.
+
+At some point, the anxiety may go away.
+
+[^caning]: Specifically a [footstool](https://basketweaving.com/shopsite_sc/store/html/chair-caning-footstool-frame-moreinfo.html) to use while I play guitar. Inspired by [Rajiv Surendra](https://www.youtube.com/watch?v=MNe5Lo1GQ9g)
+[^idio]: Picking media at random is likely idiosyncratic and certainly makes things more complicated. Also it indicates a certain arrogance, no? Let me just grab an instrument and I'll be a virtuoso.
 [^ira]: [Ira Glass On Story Telling](https://vimeo.com/24715531){:target="blank"}
 [^rick]: [The Creative Act by Rick Rubin](https://sites.prh.com/thecreativeact){:target="blank"} - Frankly the entire book, but the Self-Doubt chapter talks about it explicitly
+[^sarah]: [Sarah's Scribbles](https://twitter.com/SarahCAndersen/status/943504157960421377?s=20)
 [^jude]: [@judearden](https://www.tiktok.com/@judearden/video/7239708263481232682){:target="blank"}
 [^tyler]: [All Star Series: Tyler Talk, Paris - Confidence in your Art](https://youtu.be/Z90f1-zWg0c?t=3655){:target="blank"}
+[^pascal]: Lessons are huge reason why I've stuck with it for so long. If you happen to be in the Seattle area and want a phenomenal guitar teacher, and friend, I encourage you to [reach out to my friend Pascal](https://www.seattleguitarteacher.com/)
