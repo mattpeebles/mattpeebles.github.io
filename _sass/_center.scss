@@ -1,0 +1,10 @@
+#center {
+    padding-left: var(--padding-left);
+    padding-right: var(--padding-right);
+
+    @include for_breakpoint(desktop){
+        #body{
+            margin-bottom: 5%;
+        }
+    }
+}

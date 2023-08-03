@@ -1,0 +1,67 @@
+@use "sass:color";
+
+$light-bg: #fff;
+$light-text: #408bbd;
+$light-text-secondary: #408bbd;
+$light-link: #3e4e53;
+$light-hover: #899D78;
+$light-footnote-color: #DA4167;
+
+$dark-bg: #222;
+$dark-text: #ddd;
+$dark-text-secondary: #9CD3D3;
+$dark-link: #cac3bc;
+$dark-hover: #988BD0;
+$dark-footnote-color: #D585A3;
+
+html {
+  --secondary-text-color: #{$light-text-secondary};
+  --link-color: #{$light-link};
+  --main-background-color: #{$light-bg};
+  --main-text-color: #{$light-text};
+  --navbar-height: 50px;
+  --border-color-faded: #{rgba($light-text-secondary, .4)};
+  --footnote-link-color: #{$light-footnote-color};
+  --title-font: 'Roboto';
+  --subtitle-font: 'Martel';
+  --body-font: 'Hind Madurai';
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    --secondary-text-color: #{$dark-text-secondary};
+    --link-color: #{$dark-link};
+    --main-background-color: #{$dark-bg};
+    --main-text-color: #{$dark-text};
+    --border-color-faded: #{rgba($dark-text-secondary, .4)};
+    --footnote-link-color: #{$dark-footnote-color};
+}
+}
+
+@include for_breakpoint(tablet landscape) {
+  html {
+    --padding-left: 20%;
+    --padding-right: 20%;
+  }
+}
+
+@include for_breakpoint(tablet portrait) {
+  html {
+    --padding-left: 15%;
+    --padding-right: 15%;
+  }
+}
+
+@include for_breakpoint(mobile) {
+  html {
+    --padding-left: 5%;
+    --padding-right: 5%;
+  }
+}
+
+@include for_breakpoint(desktop) {
+  html {
+    --padding-left: 25%;
+    --padding-right: 25%;
+  }
+}

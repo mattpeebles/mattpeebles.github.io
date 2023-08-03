@@ -1,0 +1,12 @@
+<nav id="nav">
+    <div id="home">
+      <a href="/"> Matt Peebles</a>
+    </div>
+    <div id="sections">
+        {% for item in site.data.navigation %}
+        <a href="{{ item.link }}" {% if page.url == item.link %} style="text-decoration: underline;"{% endif %}>
+          {{ item.name }}
+        </a>
+      {% endfor %}
+    </div>
+</nav>

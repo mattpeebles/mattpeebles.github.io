@@ -1,1 +1,7 @@
-# Vanity Site for Matthew Peebles
+# Personal Site
+
+
+
+### Local
+#### Development
+jekyll serve

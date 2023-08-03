@@ -1,0 +1,11 @@
+---
+layout: default
+title: Art
+---
+<h1>Latest Posts</h1>
+
+<ul>
+  {% for post in site.categories.art %}
+    {% include post_list_item.html %}
+  {% endfor %}
+</ul>

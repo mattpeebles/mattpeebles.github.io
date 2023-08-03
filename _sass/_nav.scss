@@ -1,0 +1,55 @@
+#nav {
+    display: flex;
+    flex-direction: row;
+    height: var(--navbar-height);
+    position: fixed;
+    width: 100%;
+    background-color: var(--main-background-color);
+
+    & + article{
+        margin-top: var(--navbar-height);
+    }
+
+    &>div {
+        display: flex;
+        align-items: center;
+        a {
+            padding: 0;
+            background: transparent !important;
+            text-decoration: none;
+    
+            &:hover,
+            &.active {
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+    }
+
+    @include for_breakpoint(mobile) {
+        padding-left: var(--padding-left);
+        padding-right: var(--pading-right);
+    }
+
+    #home {
+        @include for_breakpoint(tablet desktop) {
+            a {
+                margin-left: 5%;
+            }
+
+            width: var(--padding-left);
+        }
+    }
+
+    #sections {
+        display: flex;
+        flex-direction: row;
+        flex-grow: 1;
+        justify-content: space-evenly;
+
+        @include for_breakpoint(tablet desktop) {
+            justify-content: space-between;
+            padding-right: 15%;
+        }
+    }
+}
