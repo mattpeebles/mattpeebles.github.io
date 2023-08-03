@@ -3,10 +3,13 @@
         h1 {
             font-weight: 600;
             font-family: var(--title-font);
+            font-size: 2em;
+            margin-bottom: 5px;
         }
 
         #date {
             font-style: italic;
+            margin: 0;
         }
 
         #quote {
@@ -16,7 +19,6 @@
 
     #quote{
         text-align: center;
-        font-family: var(--subtitle-font);
 
         @include for_breakpoint(desktop tablet){
                 padding-left: 20%;
