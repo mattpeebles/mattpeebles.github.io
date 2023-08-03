@@ -1,0 +1,12 @@
+social{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 50px;
+    align-items: center;
+
+    img{
+        height: 25px;
+        width: 25px;
+    }
+}

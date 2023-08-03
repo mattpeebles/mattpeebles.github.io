@@ -1,0 +1,6 @@
+- name: LinkedIn
+  link: https://linkedin.com/in/mmpeebles
+  img: /resources/images/linkedin.svg
+- name: Github
+  link: https://github.com/mattpeebles
+  img: /resources/images/github.svg
