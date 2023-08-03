@@ -2,6 +2,7 @@
     #header {
         h1 {
             font-weight: 600;
+            font-family: var(--title-font);
         }
 
         #date {
@@ -15,16 +16,25 @@
 
     #quote{
         text-align: center;
+        font-family: var(--subtitle-font);
 
-        @include for_breakpoint(desktop){
+        @include for_breakpoint(desktop tablet){
                 padding-left: 20%;
                 padding-right: 20%;
                 margin: 5% 0% 5% 0%;
         }
     }
 
+    em, strong{
+        color: var(--secondary-text-color);
+    }
+  
+    .footnote, .reversefootnote{
+        color: var(--footnote-link-color);
+    }
+
     .footnotes{
         border-top: solid 1px;
-        margin-top: 5%;
+        margin-top: 15px;
     }
 }
