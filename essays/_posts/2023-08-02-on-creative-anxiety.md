@@ -5,11 +5,7 @@ attribution: Tyler, the Creator
 tags: [anxiety, creativity]
 ---
 
-There. Done. My first words written with the intention of being put out into the world. It's felt insurmontable at times, but at least these words are written. Though, maybe it takes more than just a couple of words.
-
-I already hate the meta tone this is taking. Nevertheless, let's just write something and see where it leads us.
-
-Now onto anxiety—specifically, artistic anxiety. I feel a compelling urge to create. I believe I've felt this way for my entire life, though I became particularly aware of it in my early twenties. Prior to that, I'm sure the urge was there, but I hadn't yet developed an inner critic. So, the things I created were simply products of my creativity, not a reflection of my identity or an indication of my skill.
+I feel a compelling urge to create. I believe I've felt this way for my entire life, though I became particularly aware of it in my early twenties. Prior to that, I'm sure the urge was there, but I hadn't yet developed an inner critic. So, the things I created were simply products of my creativity, not a reflection of my identity or an indication of my skill.
 
 That changed at some point. I noticed that I wanted to create, but couldn't at the level I wanted to. I couldn't express myself adequately since everything I was creating was failing to impress me. I tried a bunch of media - paint, drawing, photography, writing, poetry, caning[^caning], guitar, and more. 
 
